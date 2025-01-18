@@ -40,6 +40,12 @@ body, html {
   text-decoration: none;
 }
 
+.w3cvalid {
+  border:0;
+  width:88px;
+  height:31px;
+}
+
 @media (prefers-color-scheme: light) {
   #dark-mode-toggle:not(:checked) ~ #background #dark-mode-icon {
     display: none;

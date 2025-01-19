@@ -69,7 +69,11 @@
     <div id="foreground" class="mx-auto my-4 pt-2 pb-1 px-3 bg-body border border-secondary">
       <header>
         <div class="d-flex align-items-center pt-2">
-          <img height="64" class="pe-2" src="assets/icon.png" alt="Programming Club logo">
+          <picture>
+            <source srcset="assets/icon.avif" type="image/avif">
+            <source srcset="assets/icon.webp" type="image/webp">
+            <img height="64" class="pe-2" src="assets/icon.png" alt="Programming Club logo">
+          </picture>
           <h1 class="me-auto">Programming Club</h1>
           <label class="btn mb-2 d-none d-sm-block" for="dark-mode-toggle" onclick="ToggleDarkMode()">
             <div class="bi text-bg-warning light-mode-icon"></div>
@@ -116,7 +120,8 @@ Implemented by Joshua Wierenga and Kentaro Watts.</p>
 <p>Built using <a href="https://pandoc.org/">Pandoc</a>’s Markdown to HTML converter as a static site generator with images prepared with <a href="https://imagemagick.org/">ImageMagick</a>.<br />
 This website relies on <a href="https://getbootstrap.com/">Bootstrap 5</a>, licensed under <a href="https://github.com/twbs/bootstrap/blob/v5.3.3/LICENSE">MIT</a>
 and various icons from <a href="https://icons.getbootstrap.com/">Bootstrap Icons</a>, also licensed under <a href="https://github.com/twbs/icons/blob/v1.11.3/LICENSE">MIT</a>.<br />
-Special thanks to Nathaniel for their css only dark mode toggle <a href="https://endtimes.dev/no-javascript-dark-mode-toggle/">code</a>.</p>
+Special thanks to Nathaniel for their css only dark mode toggle <a href="https://endtimes.dev/no-javascript-dark-mode-toggle/">code</a>.<br />
+Using <a href="https://commons.wikimedia.org/wiki/File:No-Image-Placeholder.svg">this placeholder image</a> by Ranjithsiji under CC-BY-SA-4.0.</p>
 <p>Website info:</p>
 <ul>
 <li>Version: v2.0.0-preview</li>
@@ -126,11 +131,11 @@ Special thanks to Nathaniel for their css only dark mode toggle <a href="https:/
 <li>Bootstrap version: v5.3.3</li>
 <li>Bootstrap Icons version: v1.13.3
 <!-- TODO: Parse to local time with js? --></li>
-<li>Last built: 2025-01-20T00:30:15+11:00</li>
-<li>Git commit: dbbad7855c21861f1a3382a50f380cac656e2da7</li>
+<li>Last built: 2025-01-20T02:29:43+11:00</li>
+<li>Git commit: 2119ee1a7cd839b75567bf6f3b718c6ba62bf96f</li>
 <li>Git commit author(s): Joshua Wierenga (joshuagit@joshuawierenga.tech)
 <!-- TODO: Parse to local time with js? --></li>
-<li>Git commit time: 2025-01-20T00:28:25+11:00</li>
+<li>Git commit time: 2025-01-20T02:25:30+11:00</li>
 <li>Git commit branch: main</li>
 </ul>
 <!-- TODO: Uncomment once js dark mode support is back -->

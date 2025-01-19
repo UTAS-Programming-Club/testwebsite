@@ -69,7 +69,11 @@
     <div id="foreground" class="mx-auto my-4 pt-2 pb-1 px-3 bg-body border border-secondary">
       <header>
         <div class="d-flex align-items-center pt-2">
-          <img height="64" class="pe-2" src="assets/icon.png" alt="Programming Club logo">
+          <picture>
+            <source srcset="assets/icon.avif" type="image/avif">
+            <source srcset="assets/icon.webp" type="image/webp">
+            <img height="64" class="pe-2" src="assets/icon.png" alt="Programming Club logo">
+          </picture>
           <h1 class="me-auto">Programming Club</h1>
           <label class="btn mb-2 d-none d-sm-block" for="dark-mode-toggle" onclick="ToggleDarkMode()">
             <div class="bi text-bg-warning light-mode-icon"></div>

@@ -112,15 +112,60 @@
 <header id="title-block-header">
 <h2 class="title">Our Projects</h2>
 </header>
-<p>The Club runs a series of programming projects to encourage learning and to build stuff together. Organised from the bottom up, these projects are a way to apply skills and concepts from class and outside university in a friendly and supportive environment. We aim to design projects to be accessible for people of varying skill. Projects are open to all members.</p>
-<h2>
-UntitledTextAdventure
-</h2>
-<p>A text adventure written in the C langauge. Play as a character and fight mobs.</p>
-<h2>
-Discord Bot
-</h2>
-<p>Developed for our Discord server, the Club’s own Discord bot comes with a variety of minigames.</p>
+<p>The Club mantains a series of programming projects to encourage learning and help students gain experience working in terms to create real software.
+Organised from the bottom up, these projects are a way to apply skills and concepts from classes as well as knowledge gained outside university in a friendly and supportive environment.
+We aim to design projects that are accessible for people of varying skill levels and abilities.</p>
+<p>We only accept contributions to our projects from members so if you are interested but are not one yet, then please visit our Rubric page to become one.
+Additionally, any contributions made to our projects must include a copyright assignment to the Club. We plan to formalise this project in future to make it easy to do for first time contributors.</p>
+<!-- TODO: Add pictures of projects -->
+<h3 id="untitled-text-adventure">Untitled Text Adventure</h3>
+<p>A yet unnamed classic text adventure that started development in early 2024 in C but is currently being rewritten in <a href="https://haxe.org/">Haxe</a>, a blend of Java and Python used mostly for game development which we hope will make the game more approachable to work on.
+Like similar text adventures from the 80s and 90s, the game features password based saving rather than modern save files, this forces us to be creative when introducing new features as to avoid bloating the password and so making it hard to use.</p>
+<p>A key focus of this project is having it be compatible with a wide variety of unusual targets including Discord, our Website and the <a href="https://shop.pimoroni.com/products/picovision">Pimoroni PicoVision</a>, an embedded Raspberry PI RP2040 based computer with an HDMI output.
+We started in C for it’s near universal adoption on both new and old devices going back decades, but it turns out that Haxe fits this niche even better as it can be converted into a number of other languages including C++, JavaScript and Python making it easy to use almost anywhere.
+Once the rewrite is done, we have plans to develop a map editor and possibly make use on other Tassie made projects like <a href="https://www.yarnspinner.dev/">Yarn Spinner</a> for narrative and progression management since a partial <a href="https://github.com/cxsquared/hxyarn">Haxe port</a> already exists.</p>
+<h6 class="mb-0" id="links">Links:</h6>
+<ul>
+<li><a href="https://github.com/UTAS-Programming-Club/UntitledTextAdventure">Original game’s source code</a></li>
+<li><a href="https://github.com/UTAS-Programming-Club/UntitledTextAdventure/tree/haxe-rewrite">Haxe rewrite’s source code</a></li>
+<li><a href="https://github.com/UTAS-Programming-Club/UntitledTextAdventure/wiki">Some ideas and a partial development history</a></li>
+<li><a href="https://github.com/UTAS-Programming-Club/DiscordBot/blob/main/PCBot/plugins/textadventure.py">Discord bot plugin to use original game</a></li>
+<li><a href="https://github.com/UTAS-Programming-Club/DiscordBot/blob/main/PCBot/plugins/textadventurenew.py">Discord bot plugin to use haxe rewrite</a></li>
+<li><a href="https://programmingclub.com.au/game/webfrontend.html">Web build</a>, note that this is on our old website</li>
+</ul>
+<h3 id="discord-bot">Discord Bot</h3>
+<p>Developed for our Discord server, the Club’s own Discord bot comes with a variety of minigames supporting both singleplayer and multiplayer including tictactoe and minesweeper.
+The bot is written in Python using <a href="https://github.com/hikari-py/hikari">hikari</a>, <a href="https://github.com/hikari-crescent/hikari-crescent">hikari-crescent</a>, and <a href="https://github.com/hypergonial/hikari-miru">hikari-miru</a> to handle communication with Discord, basic user interaction and button menus respectively.
+On top of this, we have developed custom methods of reloading and debugging plugins during development with plans to improve these features even further to allow people to work on the bot simulatiously without risking impacting each other.</p>
+<p>We have previously included partial support for hangman and classic DECtalk based TTS.
+If anyone is interested in these features and would like to help finish support for them, then please let us know.
+Recently, we used the bot to list scores from our private Advent of Code 2024 leaderboard to make it easy to compare scores with other members.</p>
+<h6 class="mb-0" id="links-1">Links:</h6>
+<ul>
+<li><a href="https://github.com/UTAS-Programming-Club/DiscordBot">Our bot’s source code</a></li>
+</ul>
+<h3 id="minecraft-modserver">Minecraft Mod/Server</h3>
+<p>Mid last year we soft launched our new modded Minecraft server with <a href="https://modrinth.com/mod/terralith">Terralith</a> for more interesting terrain generation and <a href="https://modrinth.com/mod/cc-tweaked">CC: Tweaked</a> i.e updated Computer Craft so we can program with Lua inside the game.
+Shortly after starting the server, we began to further mod the game with changes of our own design.
+Currently, our mod just adds explosion proof glass but we welcome suggestions for more features.</p>
+<p>If there is interest, we plan to get back into playing during the holidays before semester 1 starts.</p>
+<h6 class="mb-0" id="links-2">Links:</h6>
+<ul>
+<li><a href="https://github.com/UTAS-Programming-Club/HardenedGlass">Our mod’s source code</a></li>
+</ul>
+<h3 id="this-website">This Website</h3>
+<p>What you are seeing now is a a major redesign of our original website.
+Both are static websites hosted on GitHub but the updated site allows us to write pages in Markdown and then convert to HTML using <a href="https://pandoc.org/">Pandoc</a> which should be much easier to maintain.
+Additionally, major sections of the site like the top nav bar are generated entirely automatically to avoid having to modify every page whenever something changes.
+We also used the opportunity to rewrite most pages to cover way more of what we do and how students can get involved as well as add cool new features like dark mode.</p>
+<p>Check out the info page with the button in the bottom right to see some more infomation about the website and how it is designed and mantained.
+We have plans to add even more content, improve the integration with the text adventure and possibly add alternate themes.
+Let us know what you would like to see!</p>
+<h6 class="mb-0" id="links-3">Links:</h6>
+<ul>
+<li><a href="https://github.com/UTAS-Programming-Club/testwebsite">Our updated website’s source code</a></li>
+<li><a href="https://github.com/UTAS-Programming-Club/UTAS-Programming-Club.github.io">Our legacy website’s source code</a>, while it still exists</li>
+</ul>
       </div>
       <hr>
       <aside>

@@ -36,8 +36,8 @@ body, html {
   font-weight: bold;
 }
 
-.hideul {
-  text-decoration: none;
+p:has(> .list-heading) {
+  margin-bottom: 0;
 }
 
 .w3cvalid {

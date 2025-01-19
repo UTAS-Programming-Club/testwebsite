@@ -71,24 +71,22 @@
         <div class="d-flex align-items-center pt-2">
           <img height="64" class="pe-2" src="assets/icon.png" alt="Programming Club logo">
           <h1 class="me-auto">Programming Club</h1>
-          <!-- TODO: Fix button hitting into title on mobile -->
-          <!-- TODO: Fix button alignment, the svg is aligned with the title but not it's border when clicked -->
-          <label class="btn my-2 my-sm-0" for="dark-mode-toggle" onclick="ToggleDarkMode()">
-            <svg id="light-mode-icon" class="bi text-warning h3" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" focusable="false" xmlns="http://www.w3.org/2000/svg" >
-              <path d="M12 8a4 4 0 1 1-8 0 4 4 0 0 1 8 0M8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0m0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13m8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5M3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8m10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0m-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0m9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707M4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708"/>
-            </svg>
-            <svg id="dark-mode-icon" class="bi text-white h3" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" focusable="false" xmlns="http://www.w3.org/2000/svg" >
-              <path d="M6 .278a.77.77 0 0 1 .08.858 7.2 7.2 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277q.792-.001 1.533-.16a.79.79 0 0 1 .81.316.73.73 0 0 1-.031.893A8.35 8.35 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.75.75 0 0 1 6 .278"/>
-              <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.73 1.73 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.73 1.73 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.73 1.73 0 0 0 1.097-1.097zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.16 1.16 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.16 1.16 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732z"/>
-            </svg>
+          <label class="btn mb-2 d-none d-sm-block" for="dark-mode-toggle" onclick="ToggleDarkMode()">
+            <div class="bi text-bg-warning light-mode-icon"></div>
+            <div class="bi bg-white dark-mode-icon"></div>
           </label>
         </div>
         <!-- TODO: Support toggling menu without js on mobile -->
+        <!-- TODO: Decide if .navbar-expand-sm would be fine -->
         <nav class="navbar navbar-expand-md">
-          <div class="container-fluid">
+          <div class="container-fluid ps-2 pe-0 pe-sm-2">
             <button type="button" class="navbar-toggler mt-2" data-bs-toggle="collapse" data-bs-target="#navbarPages" aria-controls="navbarPages" aria-expanded="false" aria-label="Toggle header navigation with pages">
               <span class="navbar-toggler-icon"></span>
             </button>
+            <label class="btn mt-2 d-block d-sm-none" for="dark-mode-toggle" onclick="ToggleDarkMode()">
+              <div class="bi text-bg-warning light-mode-icon"></div>
+              <div class="bi bg-white dark-mode-icon"></div>
+            </label>
             <div id="navbarPages" class="collapse navbar-collapse pt-3">
               <ul class="navbar-nav nav-justified w-100 mb-2 mb-md-0">
                 <li class="nav-item mb-2 px-2">
@@ -128,11 +126,11 @@ Special thanks to Nathaniel for their css only dark mode toggle <a href="https:/
 <li>Bootstrap version: v5.3.3</li>
 <li>Bootstrap Icons version: v1.13.3
 <!-- TODO: Parse to local time with js? --></li>
-<li>Last built: 2025-01-19T18:41:52+11:00</li>
-<li>Git commit: 8daa67d5c09f3c073a36625739f83e8add036c60</li>
+<li>Last built: 2025-01-19T23:44:57+11:00</li>
+<li>Git commit: 4fe5583efe6027c39194f83830d9b8b5163fea13</li>
 <li>Git commit author(s): Joshua Wierenga (joshuagit@joshuawierenga.tech)
 <!-- TODO: Parse to local time with js? --></li>
-<li>Git commit time: 2025-01-19T17:29:06+11:00</li>
+<li>Git commit time: 2025-01-19T23:43:37+11:00</li>
 <li>Git commit branch: main</li>
 </ul>
 <!-- TODO: Uncomment once js dark mode support is back -->

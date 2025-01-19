@@ -8,6 +8,7 @@ body, html {
   position: relative;
 }
 
+/* header.html */
 #foreground {
   max-width: 60rem;
   box-shadow: 2px 2px rgba(var(--bs-tertiary-color-rgb), 0.25);
@@ -45,6 +46,7 @@ body, html {
     background-color: var(--bs-body-color);
 }
 
+/* Pandoc created in all pages */
 #title-block-header {
   margin-top: 1em;
   margin-bottom: 2em;
@@ -55,6 +57,12 @@ p:has(> .list-heading) {
   margin-bottom: 0;
 }
 
+/* about.md */
+.constitution {
+  height: 500px;
+}
+
+/* websiteabout.md */
 .w3cvalid {
   border:0;
   width:88px;

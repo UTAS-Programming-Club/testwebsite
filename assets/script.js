@@ -32,6 +32,11 @@ addEventListener("DOMContentLoaded", (event) => {
   UpdateMode(dark);
   history.pushState({}, null, UpdateUrl(location, dark));
   UpdateNavItems(dark);
+
+  const jsOnlyElements = [...document.getElementsByClassName("js-only")];
+  for (let element of jsOnlyElements) {
+    element.hidden = false;
+  }
 });
 
 matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {

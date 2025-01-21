@@ -82,6 +82,7 @@ cp assets/script.js output/assets/script.js
 cp assets/style.css output/assets/style.css
 cp assets/"Programming Club Constitution.pdf" output/assets/"Programming Club Constitution.pdf"
 cp -r assets/win98/ output/assets/
+cp -r assets/winxp/ output/assets/
 
 # TODO: Make these optional as they are quite slow
 bin/magick assets/DraftPCLogoV2.png -strip -background none -resize 48x48 -density 48x48 output/assets/favicon.ico

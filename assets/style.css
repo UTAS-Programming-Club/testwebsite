@@ -8,9 +8,18 @@ body, html {
   position: relative;
 }
 
+[data-theme="win98"] body {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--preferred-font), system-ui;
+}
+
 /* header.html */
 #foreground {
   max-width: 60rem;
+}
+
+[data-theme="bootstrap"] #foreground {
   box-shadow: 2px 2px rgba(var(--bs-tertiary-color-rgb), 0.25);
 }
 
@@ -36,7 +45,7 @@ body, html {
   box-shadow: 2px 2px rgba(var(--bs-tertiary-color-rgb), 0.25);
 }
 
-[aria-current="page"] {
+[data-theme="bootstrap"] [aria-current="page"] {
     color: var(--bs-tertiary-bg) !important;
     background-color: var(--bs-tertiary-color);
 }

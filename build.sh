@@ -56,11 +56,11 @@ for output_page in $PAGES; do
     fi
 
     navbar="$navbar                <li class=\"nav-item mb-2 px-2\">\n"
-    navbar="$navbar                  <a class=\"nav-link pt-1\""
+    navbar="$navbar                  <a class=\"button d-block"
     if [ "$output_page" = "$navbar_page" ]; then
-      navbar="$navbar aria-current=\"page\" href=\"#"
+      navbar="$navbar focus\" aria-current=\"page\" href=\"#"
     else
-      navbar="$navbar href=\"$navbar_page.html"
+      navbar="$navbar\" href=\"$navbar_page.html"
     fi
     navbar="$navbar\">$name</a>\n"
     navbar="$navbar                </li>\n"
@@ -81,6 +81,7 @@ done
 cp assets/script.js output/assets/script.js
 cp assets/style.css output/assets/style.css
 cp assets/"Programming Club Constitution.pdf" output/assets/"Programming Club Constitution.pdf"
+cp -r assets/win98/ output/assets/
 
 # TODO: Make these optional as they are quite slow
 bin/magick assets/DraftPCLogoV2.png -strip -background none -resize 48x48 -density 48x48 output/assets/favicon.ico

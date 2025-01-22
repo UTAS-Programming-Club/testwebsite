@@ -81,12 +81,109 @@ We aim to design projects that are accessible for people of varying skill levels
 <p>We only accept contributions to our projects from members so if you are interested but are not one yet, then please visit our Rubric page to become one.
 Additionally, any contributions made to our projects must include a copyright assignment to the Club. We plan to formalise this project in future to make it easy to do for first time contributors.</p>
 <!-- TODO: Add pictures of projects -->
+<!-- TODO: Allow minimising examples with a bootstrap collapse -->
 <h3 id="untitled-text-adventure">Untitled Text Adventure</h3>
 <p>A yet unnamed classic text adventure that started development in early 2024 in C but is currently being rewritten in <a href="https://haxe.org/">Haxe</a>, a blend of Java and Python used mostly for game development which we hope will make the game more approachable to work on.
 Like similar text adventures from the 80s and 90s, the game features password based saving rather than modern save files, this forces us to be creative when introducing new features as to avoid bloating the password and so making it hard to use.</p>
 <p>A key focus of this project is having it be compatible with a wide variety of unusual targets including Discord, our Website and the <a href="https://shop.pimoroni.com/products/picovision">Pimoroni PicoVision</a>, an embedded Raspberry PI RP2040 based computer with an HDMI output.
 We started in C for it’s near universal adoption on both new and old devices going back decades, but it turns out that Haxe fits this niche even better as it can be converted into a number of other languages including C++, JavaScript and Python making it easy to use almost anywhere.
 Once the rewrite is done, we have plans to develop a map editor and possibly make use on other Tassie made projects like <a href="https://www.yarnspinner.dev/">Yarn Spinner</a> for narrative and progression management since a partial <a href="https://github.com/cxsquared/hxyarn">Haxe port</a> already exists.</p>
+<p>Some example screens:</p>
+<div id="textAdventureExamples" class="carousel slide">
+<div class="carousel-indicators">
+<button type="button" data-bs-target="#textAdventureExamples" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1">
+</button>
+<button type="button" data-bs-target="#textAdventureExamples" data-bs-slide-to="1" aria-label="Slide 2">
+</button>
+<button type="button" data-bs-target="#textAdventureExamples" data-bs-slide-to="2" aria-label="Slide 3">
+</button>
+</div>
+<div class="carousel-inner">
+<div class="carousel-item active">
+<pre><code>Untitled text adventure game
+----------------------------
+By the UTAS Programming Club
+
+Currently unimplemented :(
+
+Use the numbers below to make a selection.
+1. Start Game
+2. Load Game
+3. Quit Game</code></pre>
+</div>
+<div class="carousel-item">
+<pre><code>You find yourself surrounded.
+
+You attacked enemy 2 with your sword.
+Enemy 1 attacked you with their sword but your armour absorbed the impact.
+Enemy 2 attacked you with their sword but your armour absorbed the impact.
+Enemy 3 launched a fireball at you but your armour absorbed the impact.
+
+Your Health:  ███████    :  64%
+Your Stamina: ██████████ : 100%
+
+Physical enemy 1 health: ██████████ :  95%
+Physical enemy 2 health: ████       :  33%
+ Magical enemy 3 health: ██████████ : 100%
+
+Combat log:
+⬤ Enemy 3 did 0 magic damage to you
+⬤ Enemy 2 did 0 physical damage to you
+⬤ Enemy 1 did 0 physical damage to you
+⬤ You did 67 physical damage to enemy 2
+⬤ Enemy 3 did 10 magic damage to you
+⬤ Enemy 2 did 13 physical damage to you
+⬤ Enemy 1 did 13 physical damage to you
+⬤ You did 5 physical damage to enemy 1
+
+Use the numbers below to make a selection.
+1. Attack Enemy 1
+2. Attack Enemy 2
+3. Attack Enemy 3
+4. Check Player Stats
+5. Flee</code></pre>
+</div>
+<div class="carousel-item">
+<pre><code>Player Equipment
+
+Health:                    ██████████ : 100
+Stamina:                   ██████████ : 100
+Primary Physical Attack:   ███        :  25
+Primary Magic Attack:      █          :   4
+Secondary Physical Attack: ███        :  25
+Secondary Magic Attack:    █          :   4
+Physical Defence:          █████████  :  90
+Magic Defence:             █          :  10
+
+Helmet: Leather Helmet
+Chest: Rags
+Gloves: Spiked Gloves
+Pants: Rags
+Boots: Old Leather Boots
+Primary Weapon: Fist
+Secondary Weapon: Fist
+
+
+Use the numbers below to make a selection.
+1. Swap Equipment 1
+2. Swap Equipment 2
+3. Swap Equipment 3
+4. Swap Equipment 4
+5. Swap Equipment 5
+6. Swap Equipment 6
+7. Swap Equipment 7
+8. Return to Game</code></pre>
+</div>
+</div>
+<button class="carousel-control-prev" type="button" data-bs-target="#textAdventureExamples" data-bs-slide="prev">
+<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+<span class="visually-hidden">Previous</span>
+</button>
+<button class="carousel-control-next" type="button" data-bs-target="#textAdventureExamples" data-bs-slide="next">
+<span class="carousel-control-next-icon" aria-hidden="true"></span>
+<span class="visually-hidden">Next</span>
+</button>
+</div>
 <p><span class="list-heading">Links:</span></p>
 <ul>
 <li><a href="https://github.com/UTAS-Programming-Club/UntitledTextAdventure">Original game’s source code</a></li>
@@ -94,7 +191,7 @@ Once the rewrite is done, we have plans to develop a map editor and possibly mak
 <li><a href="https://github.com/UTAS-Programming-Club/UntitledTextAdventure/wiki">Some ideas and a partial development history</a></li>
 <li><a href="https://github.com/UTAS-Programming-Club/DiscordBot/blob/main/PCBot/plugins/textadventure.py">Discord bot plugin to use original game</a></li>
 <li><a href="https://github.com/UTAS-Programming-Club/DiscordBot/blob/main/PCBot/plugins/textadventurenew.py">Discord bot plugin to use haxe rewrite</a></li>
-<li><a href="https://programmingclub.com.au/game/webfrontend.html">Web build</a>, note that this is on our old website</li>
+<li><a href="https://programmingclub.com.au/game/webfrontend.html">Web build for haxe rewrite</a>, note that this is on our old website</li>
 </ul>
 <h3 id="discord-bot">Discord Bot</h3>
 <p>Developed for our Discord server, the Club’s own Discord bot comes with a variety of minigames supporting both singleplayer and multiplayer including tictactoe and minesweeper.
@@ -103,6 +200,48 @@ On top of this, we have developed custom methods of reloading and debugging plug
 <p>We have previously included partial support for hangman and classic DECtalk based TTS.
 If anyone is interested in these features and would like to help finish support for them, then please let us know.
 Recently, we used the bot to list scores from our private Advent of Code 2024 leaderboard to make it easy to compare scores with other members.</p>
+<p>Some example commands:</p>
+<div id="discordBotExamples" class="carousel slide">
+<div class="carousel-indicators">
+<button type="button" data-bs-target="#discordBotExamples" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1">
+</button>
+<button type="button" data-bs-target="#discordBotExamples" data-bs-slide-to="1" aria-label="Slide 2">
+</button>
+<button type="button" data-bs-target="#discordBotExamples" data-bs-slide-to="2" aria-label="Slide 3">
+</button>
+</div>
+<div class="carousel-inner">
+<div class="carousel-item active">
+<p><picture>
+<source srcset="assets/discord-minesweeper.avif" type="image/avif">
+<source srcset="assets/discord-minesweeper.webp" type="image/webp">
+<img src="assets/discord-minesweeper.png" class="d-block m-auto w-auto" alt="Example of minesweeper commmand">
+</picture></p>
+</div>
+<div class="carousel-item">
+<p><picture>
+<source srcset="assets/discord-hangman.avif" type="image/avif">
+<source srcset="assets/discord-hangman.webp" type="image/webp">
+<img src="assets/discord-hangman.png" class="d-block m-auto w-auto" alt="Example of hangman commmand">
+</picture></p>
+</div>
+<div class="carousel-item">
+<p><picture>
+<source srcset="assets/discord-aoc.avif" type="image/avif">
+<source srcset="assets/discord-aoc.webp" type="image/webp">
+<img src="assets/discord-aoc.png" class="d-block m-auto w-auto" alt="Example of advent of code leaderboard commmand">
+</picture></p>
+</div>
+</div>
+<button class="carousel-control-prev" type="button" data-bs-target="#discordBotExamples" data-bs-slide="prev">
+<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+<span class="visually-hidden">Previous</span>
+</button>
+<button class="carousel-control-next" type="button" data-bs-target="#discordBotExamples" data-bs-slide="next">
+<span class="carousel-control-next-icon" aria-hidden="true"></span>
+<span class="visually-hidden">Next</span>
+</button>
+</div>
 <p><span class="list-heading">Links:</span></p>
 <ul>
 <li><a href="https://github.com/UTAS-Programming-Club/DiscordBot">Our bot’s source code</a></li>
@@ -112,6 +251,56 @@ Recently, we used the bot to list scores from our private Advent of Code 2024 le
 Shortly after starting the server, we began to further mod the game with changes of our own design.
 Currently, our mod just adds explosion proof glass but we welcome suggestions for more features.</p>
 <p>If there is interest, we plan to get back into playing during the holidays before semester 1 starts.</p>
+<div id="minecraftExamples" class="carousel slide">
+<div class="carousel-indicators">
+<button type="button" data-bs-target="#minecraftExamples" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1">
+</button>
+<button type="button" data-bs-target="#minecraftExamples" data-bs-slide-to="1" aria-label="Slide 2">
+</button>
+<button type="button" data-bs-target="#minecraftExamples" data-bs-slide-to="2" aria-label="Slide 3">
+</button>
+<button type="button" data-bs-target="#minecraftExamples" data-bs-slide-to="3" aria-label="Slide 4">
+</button>
+</div>
+<div class="carousel-inner">
+<div class="carousel-item active">
+<p><picture>
+<source srcset="assets/minecraft-1.avif" type="image/avif">
+<source srcset="assets/minecraft-1.webp" type="image/webp">
+<img src="assets/minecraft-1.png" class="d-block m-auto w-auto" alt="Example of Terralith terrain on our Minecraft Server">
+</picture></p>
+</div>
+<div class="carousel-item">
+<p><picture>
+<source srcset="assets/minecraft-2.avif" type="image/avif">
+<source srcset="assets/minecraft-2.webp" type="image/webp">
+<img src="assets/minecraft-2.png" class="d-block m-auto w-auto" alt="Example of player bases on our Minecraft Server">
+</picture></p>
+</div>
+<div class="carousel-item">
+<p><picture>
+<source srcset="assets/minecraft-3.avif" type="image/avif">
+<source srcset="assets/minecraft-3.webp" type="image/webp">
+<img src="assets/minecraft-3.png" class="d-block m-auto w-auto" alt="Example of development work on our mod for our Minecraft Server">
+</picture></p>
+</div>
+<div class="carousel-item">
+<p><picture>
+<source srcset="assets/minecraft-4.avif" type="image/avif">
+<source srcset="assets/minecraft-4.webp" type="image/webp">
+<img src="assets/minecraft-4.png" class="d-block m-auto w-auto" alt="Example of modded blocks and player structures on our Minecraft Server">
+</picture></p>
+</div>
+</div>
+<button class="carousel-control-prev" type="button" data-bs-target="#minecraftExamples" data-bs-slide="prev">
+<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+<span class="visually-hidden">Previous</span>
+</button>
+<button class="carousel-control-next" type="button" data-bs-target="#minecraftExamples" data-bs-slide="next">
+<span class="carousel-control-next-icon" aria-hidden="true"></span>
+<span class="visually-hidden">Next</span>
+</button>
+</div>
 <p><span class="list-heading">Links:</span></p>
 <ul>
 <li><a href="https://github.com/UTAS-Programming-Club/HardenedGlass">Our mod’s source code</a></li>

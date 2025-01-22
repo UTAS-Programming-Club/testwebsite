@@ -232,15 +232,3 @@ p:has(> .list-heading) {
 .bs-navbar-toggler {
   font-size: var(--bs-navbar-toggler-font-size);
 }
-
-@media (min-width: 768px) {
-  .navbar-expand-md .bs-navbar-toggler {
-    display: none;
-  }
-}
-
-@media (min-width: 992px) {
-  .navbar-expand-lg .bs-navbar-toggler {
-    display: none;
-  }
-}

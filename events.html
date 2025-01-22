@@ -25,7 +25,7 @@
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-  <input id="dark-mode-toggle" type="checkbox" class="btn-check" name="dark-mode-toggle" aria-label="Internal checkbox used to support dark mode">
+  <input id="dark-mode-toggle" type="checkbox" class="btn-check" name="dark-mode-toggle" hidden>
   <div id="background" class="h-100 overflow-x-hidden bg-secondary-subtle">
     <div id="foreground" class="mx-auto my-4 pt-2 pb-1 px-3 bg-body border border-secondary">
       <header>
@@ -36,9 +36,9 @@
             <img height="64" class="pe-2" src="assets/icon.png" alt="Programming Club logo">
           </picture>
           <h1 class="me-auto">Programming Club</h1>
-          <label class="btn mb-2 d-none d-sm-block" for="dark-mode-toggle" onclick="ToggleDarkMode()">
-            <svg class="bi text-bg-warning light-mode-icon"></svg>
-            <svg class="bi bg-white dark-mode-icon"></svg>
+          <label class="btn btn-link mb-2 d-none d-sm-block" for="dark-mode-toggle" tabindex="0" onclick="ToggleDarkMode()" onkeydown="ToggleDarkMode()">
+            <svg class="bi text-bg-warning light-mode-icon"><title>Sun icon</title></svg>
+            <svg class="bi bg-white dark-mode-icon"><title>Moon icon</title></svg>
           </label>
         </div>
         <!-- TODO: Support toggling menu without js on mobile -->
@@ -48,9 +48,9 @@
             <button type="button" class="navbar-toggler mt-2" data-bs-toggle="collapse" data-bs-target="#navbarPages" aria-controls="navbarPages" aria-expanded="false" aria-label="Toggle header navigation with pages">
               <span class="navbar-toggler-icon"></span>
             </button>
-            <label class="btn mt-2 d-block d-sm-none" for="dark-mode-toggle" onclick="ToggleDarkMode()">
-              <svg class="bi text-bg-warning light-mode-icon"></svg>
-              <svg class="bi bg-white dark-mode-icon"></svg>
+            <label class="btn btn-link mt-2 d-block d-sm-none" for="dark-mode-toggle" tabindex="0" onclick="ToggleDarkMode()" onkeydown="ToggleDarkMode()">
+              <svg class="bi text-bg-warning light-mode-icon"><title>Sun icon</title></svg>
+              <svg class="bi bg-white dark-mode-icon"><title>Moon icon</title></svg>
             </label>
             <div id="navbarPages" class="collapse navbar-collapse pt-3">
               <ul class="navbar-nav nav-justified w-100 mb-2 mb-md-0">
@@ -75,9 +75,25 @@
 <header id="title-block-header">
 <h2 class="title">Events</h2>
 </header>
+<h3 id="bbqs">BBQS</h3>
+<!-- TODO: Add details about BBQs in 2023(2022?) and 2024, and our plans for 2025 -->
+<h3 id="utas-club-and-society-days">UTAS Club and Society Days</h3>
+<!-- TODO: Mention C&S days in 2022(is anything known?), 2023 and 2024, mini C&S day in 2024, and our plans for 2025 -->
+<h3 id="weekly-meetups">Weekly Meetups</h3>
+<!-- TODO: Add details about weekly meetups in 2022, 2023 and 2024, and our plans for 2025 -->
+<h3 id="game-jams">Game Jams</h3>
+<!-- TODO: Add details about UTASJam(2023, is this the right name?, hopefully 2025), TasJam(2024, hopefully 2025), Global Game Jam/Game Jam Tas(2025), and our plans for 2025 -->
+<h3 id="game-nights">Game Nights</h3>
+<!-- TODO: Add details about combined game night events with MAPS in 2024(and 2023?) and our plans for our 2025 -->
+<h3 id="general-meetings">General Meetings</h3>
+<!-- TODO: Add details about annual and special general meetings in 2021, 2022, 2023 and 2024, and our plans for 2025 -->
+<h3 id="industry-nights">Industry Nights</h3>
+<!-- TODO: Add details about our industry night from 2023 and breifly mention the state games industry day from 2024 and our plans for 2025 -->
+<h3 id="movie-nights">Movie Nights</h3>
+<!-- TODO: Add details about combined movie night(s?) with MAPS in 2023, ours in 2024 and our plans for 2025 -->
 <iframe style="border-width:0; width: 100%; height: 400px; border: 0;" src="https://calendar.google.com/calendar/embed?height=400&amp;wkst=1&amp;ctz=Australia%2FHobart&amp;showCalendars=0&amp;title=Programming%20Club%20Calendar&amp;src=NjkxYmM0OWYyZjQ1ODU2OGM0YjUzMGZlMDY2NjczMTdjZjE5NGEzYjJmMmM2MDEwMTFkYzNjYzg5ZGVjYzU2NEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=OGI3OGYyYzY2OTNhOWI5NjE4MzBhMTAzN2MwMmIyMmE0YWZiMzUxM2VhYjg2YTIxNGVmMDRjYjg0ODNiNGRkMEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%23B39DDB&amp;color=%23039BE5" scrolling="no">
 </iframe>
-<p>*Please make sure to check out our <a href="https://discord.gg/UgBWyaaeu">Discord</a> for the most up-to-date announcements and information :D</p>
+<p>*Please make sure to check out our Discord for the most up-to-date announcements and information.</p>
       </div>
       <hr>
       <aside>

@@ -25,7 +25,7 @@
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-  <input id="dark-mode-toggle" type="checkbox" class="btn-check" name="dark-mode-toggle" aria-label="Internal checkbox used to support dark mode">
+  <input id="dark-mode-toggle" type="checkbox" class="btn-check" name="dark-mode-toggle" hidden>
   <div id="background" class="h-100 overflow-x-hidden bg-secondary-subtle">
     <div id="foreground" class="mx-auto my-4 pt-2 pb-1 px-3 bg-body border border-secondary">
       <header>
@@ -36,9 +36,9 @@
             <img height="64" class="pe-2" src="assets/icon.png" alt="Programming Club logo">
           </picture>
           <h1 class="me-auto">Programming Club</h1>
-          <label class="btn mb-2 d-none d-sm-block" for="dark-mode-toggle" onclick="ToggleDarkMode()">
-            <svg class="bi text-bg-warning light-mode-icon"></svg>
-            <svg class="bi bg-white dark-mode-icon"></svg>
+          <label class="btn btn-link mb-2 d-none d-sm-block" for="dark-mode-toggle" tabindex="0" onclick="ToggleDarkMode()" onkeydown="ToggleDarkMode()">
+            <svg class="bi text-bg-warning light-mode-icon"><title>Sun icon</title></svg>
+            <svg class="bi bg-white dark-mode-icon"><title>Moon icon</title></svg>
           </label>
         </div>
         <!-- TODO: Support toggling menu without js on mobile -->
@@ -48,9 +48,9 @@
             <button type="button" class="navbar-toggler mt-2" data-bs-toggle="collapse" data-bs-target="#navbarPages" aria-controls="navbarPages" aria-expanded="false" aria-label="Toggle header navigation with pages">
               <span class="navbar-toggler-icon"></span>
             </button>
-            <label class="btn mt-2 d-block d-sm-none" for="dark-mode-toggle" onclick="ToggleDarkMode()">
-              <svg class="bi text-bg-warning light-mode-icon"></svg>
-              <svg class="bi bg-white dark-mode-icon"></svg>
+            <label class="btn btn-link mt-2 d-block d-sm-none" for="dark-mode-toggle" tabindex="0" onclick="ToggleDarkMode()" onkeydown="ToggleDarkMode()">
+              <svg class="bi text-bg-warning light-mode-icon"><title>Sun icon</title></svg>
+              <svg class="bi bg-white dark-mode-icon"><title>Moon icon</title></svg>
             </label>
             <div id="navbarPages" class="collapse navbar-collapse pt-3">
               <ul class="navbar-nav nav-justified w-100 mb-2 mb-md-0">
@@ -78,7 +78,7 @@
 <p>We are a group of students who are passionate about programming and want to share our knowledge with others. The club is open to all students at UTAS, regardless of your experience level. We also welcome programmers from other universities and the community! We meet every week to work on projects, learn new skills, and have fun!</p>
 <p>To focus our learning and efforts, the Club runs various projects which members are encouraged to contribute to. See the projects page for more details. Our main aim is to push people to improve while keeping projects accessible for people with varying skill levels and abilities.</p>
 <p>If anyone has any questions for the Club, please send us a message via either Discord or <a href="mailto:%20contact@programmingclub.com.au">Email</a>.</p>
-<p><img src="https://programmingclub.com.au/assets/photos/weekly_meetup_cropped.jpg" title="A weekly meetup at the Sandy Bay Campus" class="img-fluid" alt="Club members in a large room with a big screen at weekly Friday meet-up" /></p>
+<p><img src="https://programmingclub.com.au/assets/photos/weekly_meetup_cropped.jpg" title="A weekly meetup at the Sandy Bay Campus" class="img-fluid" alt="Club members in a large room with a big screen at a weekly meetup" /></p>
 <h3 id="committee">Committee</h3>
 <p>The Club’s affairs are managed by the Committee.</p>
 <p>If you wish to contact a committee member via Discord, please do it via our server unless they give permission to do so privately. We would prefer if sensitive matters were handled via email.</p>
@@ -152,8 +152,8 @@ The Northern Marketing Officer would prepare and distribute advertising material
 <p>Members are encouraged to contact us if they are at all interested in running for these positions as we would love some assistance.</p>
 <h3 id="constitution">Constitution</h3>
 <p>The Club is governed by a constitution which is included below:<br />
-<a href="assets/Programming%20Club%20Constitution.pdf">Click for fullsize copy</a>
-<embed src="assets/Programming%20Club%20Constitution.pdf" class="w-100 constitution" /></p>
+<a href="assets/Programming%20Club%20Constitution.pdf">Link to fullsize copy</a>
+<embed src="assets/Programming%20Club%20Constitution.pdf" class="w-100 constitution" type="application/pdf" /></p>
       </div>
       <hr>
       <aside>

@@ -70,7 +70,8 @@ for output_page in $PAGES; do
   bin/pandoc templates/setup.yaml -s --template templates/template.html -f markdown-implicit_figures\
              --wrap=preserve -B templates/header.html -A templates/footer.html "pages/$output_page.md"\
              -o "output/$output_page.html"
-  sed -i.tmp -e "s\`%NAVBAR_ITEMS%\`$navbar\`" -e "s/%PANDOC_VERSION%/$PANDOC_VERSION/"\
+  sed -i.tmp -e "s/<body>/<body data-classic-theme=\"winxp\">/"\
+             -e "s\`%NAVBAR_ITEMS%\`$navbar\`" -e "s/%PANDOC_VERSION%/$PANDOC_VERSION/"\
              -e "s/%MAGICK_VERSION%/$MAGICK_VERSION/" -e "s/%BUILD_TIME%/$BUILD_TIME/"\
              -e "s/%BUILD_COMMIT%/$BUILD_COMMIT/" -e "s/%BUILD_COMMIT_AUTHOR%/$BUILD_COMMIT_AUTHORS/"\
              -e "s/%BUILD_COMMIT_TIME%/$BUILD_COMMIT_TIME/" -e "s/%BUILD_COMMIT_BRANCH%/$BUILD_COMMIT_BRANCH/"\

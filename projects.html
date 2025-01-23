@@ -80,16 +80,15 @@ Organised from the bottom up, these projects are a way to apply skills and conce
 We aim to design projects that are accessible for people of varying skill levels and abilities.</p>
 <p>We only accept contributions to our projects from members so if you are interested but are not one yet, then please visit our Rubric page to become one.
 Additionally, any contributions made to our projects must include a copyright assignment to the Club. We plan to formalise this project in future to make it easy to do for first time contributors.</p>
-<!-- TODO: Add pictures of projects -->
-<!-- TODO: Allow minimising examples with a bootstrap collapse -->
+<p><a href="#" role="button" data-bs-toggle="collapse" data-bs-target=".multi-collapse" aria-expanded="true" aria-controls="textAdventureExamples discordBotExamples minecraftExamples">Toggle all example dropdowns</a></p>
 <h3 id="untitled-text-adventure">Untitled Text Adventure</h3>
 <p>A yet unnamed classic text adventure that started development in early 2024 in C but is currently being rewritten in <a href="https://haxe.org/">Haxe</a>, a blend of Java and Python used mostly for game development which we hope will make the game more approachable to work on.
 Like similar text adventures from the 80s and 90s, the game features password based saving rather than modern save files, this forces us to be creative when introducing new features as to avoid bloating the password and so making it hard to use.</p>
 <p>A key focus of this project is having it be compatible with a wide variety of unusual targets including Discord, our Website and the <a href="https://shop.pimoroni.com/products/picovision">Pimoroni PicoVision</a>, an embedded Raspberry PI RP2040 based computer with an HDMI output.
 We started in C for it’s near universal adoption on both new and old devices going back decades, but it turns out that Haxe fits this niche even better as it can be converted into a number of other languages including C++, JavaScript and Python making it easy to use almost anywhere.
 Once the rewrite is done, we have plans to develop a map editor and possibly make use on other Tassie made projects like <a href="https://www.yarnspinner.dev/">Yarn Spinner</a> for narrative and progression management since a partial <a href="https://github.com/cxsquared/hxyarn">Haxe port</a> already exists.</p>
-<p>Some example screens:</p>
-<div id="textAdventureExamples" class="carousel slide">
+<p><a href="#textAdventureExamples" role="button" data-bs-toggle="collapse" data-bs-target="#textAdventureExamples" aria-expanded="true" aria-controls="textAdventureExamples">Toggle game example screens</a></p>
+<div id="textAdventureExamples" class="carousel slide multi-collapse show mt-3">
 <div class="carousel-indicators">
 <button type="button" data-bs-target="#textAdventureExamples" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1">
 </button>
@@ -198,10 +197,10 @@ Use the numbers below to make a selection.
 The bot is written in Python using <a href="https://github.com/hikari-py/hikari">hikari</a>, <a href="https://github.com/hikari-crescent/hikari-crescent">hikari-crescent</a>, and <a href="https://github.com/hypergonial/hikari-miru">hikari-miru</a> to handle communication with Discord, basic user interaction and button menus respectively.
 On top of this, we have developed custom methods of reloading and debugging plugins during development with plans to improve these features even further to allow people to work on the bot simulatiously without risking impacting each other.</p>
 <p>We have previously included partial support for hangman and classic DECtalk based TTS.
-If anyone is interested in these features and would like to help finish support for them, then please let us know.
+If anyone is interested in these features and would like to help finish support for them or for anything else, then please let us know.
 Recently, we used the bot to list scores from our private Advent of Code 2024 leaderboard to make it easy to compare scores with other members.</p>
-<p>Some example commands:</p>
-<div id="discordBotExamples" class="carousel slide">
+<p><a href="#discordBotExamples" role="button" data-bs-toggle="collapse" data-bs-target="#discordBotExamples" aria-expanded="true" aria-controls="discordBotExamples">Toggle bot example commands</a></p>
+<div id="discordBotExamples" class="carousel slide multi-collapse show mt-3">
 <div class="carousel-indicators">
 <button type="button" data-bs-target="#discordBotExamples" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1">
 </button>
@@ -251,7 +250,8 @@ Recently, we used the bot to list scores from our private Advent of Code 2024 le
 Shortly after starting the server, we began to further mod the game with changes of our own design.
 Currently, our mod just adds explosion proof glass but we welcome suggestions for more features.</p>
 <p>If there is interest, we plan to get back into playing during the holidays before semester 1 starts.</p>
-<div id="minecraftExamples" class="carousel slide">
+<p><a href="#minecraftExamples" role="button" data-bs-toggle="collapse" data-bs-target="#minecraftExamples" aria-expanded="true" aria-controls="minecraftExamples">Toggle server example screenshots</a></p>
+<div id="minecraftExamples" class="carousel slide multi-collapse show mt-3">
 <div class="carousel-indicators">
 <button type="button" data-bs-target="#minecraftExamples" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1">
 </button>

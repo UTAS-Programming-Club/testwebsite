@@ -37,7 +37,7 @@
           </picture>
           <h1 class="me-auto">Programming Club</h1>
           <label class="btn btn-link mb-2 d-none d-sm-block" for="dark-mode-toggle" tabindex="0" onclick="ToggleDarkMode()" onkeydown="ToggleDarkMode()">
-            <svg class="bi text-bg-warning light-mode-icon"><title>Sun icon</title></svg>
+            <svg class="bi bg-warning light-mode-icon"><title>Sun icon</title></svg>
             <svg class="bi bg-white dark-mode-icon"><title>Moon icon</title></svg>
           </label>
         </div>
@@ -81,14 +81,14 @@ We aim to design projects that are accessible for people of varying skill levels
 <p>We only accept contributions to our projects from members so if you are interested but are not one yet, then please visit our Rubric page to become one.
 Additionally, any contributions made to our projects must include a copyright assignment to the Club. We plan to formalise this project in future to make it easy to do for first time contributors.</p>
 <p><a href="#" role="button" data-bs-toggle="collapse" data-bs-target=".multi-collapse" aria-expanded="true" aria-controls="textAdventureExamples discordBotExamples minecraftExamples">Toggle all example dropdowns</a></p>
-<h3 id="untitled-text-adventure">Untitled Text Adventure</h3>
+<h3 id="untitled-text-adventure"><span>Untitled Text Adventure</span><a class="ms-2" href="#untitled-text-adventure"><svg class="bi heading-anchor-icon"><title>Link icon</title></svg></a></h3>
 <p>A yet unnamed classic text adventure that started development in early 2024 in C but is currently being rewritten in <a href="https://haxe.org/">Haxe</a>, a blend of Java and Python used mostly for game development which we hope will make the game more approachable to work on.
 Like similar text adventures from the 80s and 90s, the game features password based saving rather than modern save files, this forces us to be creative when introducing new features as to avoid bloating the password and so making it hard to use.</p>
 <p>A key focus of this project is having it be compatible with a wide variety of unusual targets including Discord, our Website and the <a href="https://shop.pimoroni.com/products/picovision">Pimoroni PicoVision</a>, an embedded Raspberry PI RP2040 based computer with an HDMI output.
 We started in C for it’s near universal adoption on both new and old devices going back decades, but it turns out that Haxe fits this niche even better as it can be converted into a number of other languages including C++, JavaScript and Python making it easy to use almost anywhere.
 Once the rewrite is done, we have plans to develop a map editor and possibly make use on other Tassie made projects like <a href="https://www.yarnspinner.dev/">Yarn Spinner</a> for narrative and progression management since a partial <a href="https://github.com/cxsquared/hxyarn">Haxe port</a> already exists.</p>
 <p><a href="#textAdventureExamples" role="button" data-bs-toggle="collapse" data-bs-target="#textAdventureExamples" aria-expanded="true" aria-controls="textAdventureExamples">Toggle game example screens</a></p>
-<div id="textAdventureExamples" class="carousel slide multi-collapse show mt-3">
+<div id="textAdventureExamples" class="carousel slide multi-collapse show">
 <div class="carousel-indicators">
 <button type="button" data-bs-target="#textAdventureExamples" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1">
 </button>
@@ -192,7 +192,7 @@ Use the numbers below to make a selection.
 <li><a href="https://github.com/UTAS-Programming-Club/DiscordBot/blob/main/PCBot/plugins/textadventurenew.py">Discord bot plugin to use haxe rewrite</a></li>
 <li><a href="https://programmingclub.com.au/game/webfrontend.html">Web build for haxe rewrite</a>, note that this is on our old website</li>
 </ul>
-<h3 id="discord-bot">Discord Bot</h3>
+<h3 id="discord-bot"><span>Discord Bot</span><a class="ms-2" href="#discord-bot"><svg class="bi heading-anchor-icon"><title>Link icon</title></svg></a></h3>
 <p>Developed for our Discord server, the Club’s own Discord bot comes with a variety of minigames supporting both singleplayer and multiplayer including tictactoe and minesweeper.
 The bot is written in Python using <a href="https://github.com/hikari-py/hikari">hikari</a>, <a href="https://github.com/hikari-crescent/hikari-crescent">hikari-crescent</a>, and <a href="https://github.com/hypergonial/hikari-miru">hikari-miru</a> to handle communication with Discord, basic user interaction and button menus respectively.
 On top of this, we have developed custom methods of reloading and debugging plugins during development with plans to improve these features even further to allow people to work on the bot simulatiously without risking impacting each other.</p>
@@ -200,7 +200,7 @@ On top of this, we have developed custom methods of reloading and debugging plug
 If anyone is interested in these features and would like to help finish support for them or for anything else, then please let us know.
 Recently, we used the bot to list scores from our private Advent of Code 2024 leaderboard to make it easy to compare scores with other members.</p>
 <p><a href="#discordBotExamples" role="button" data-bs-toggle="collapse" data-bs-target="#discordBotExamples" aria-expanded="true" aria-controls="discordBotExamples">Toggle bot example commands</a></p>
-<div id="discordBotExamples" class="carousel slide multi-collapse show mt-3">
+<div id="discordBotExamples" class="carousel slide multi-collapse show">
 <div class="carousel-indicators">
 <button type="button" data-bs-target="#discordBotExamples" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1">
 </button>
@@ -245,13 +245,13 @@ Recently, we used the bot to list scores from our private Advent of Code 2024 le
 <ul>
 <li><a href="https://github.com/UTAS-Programming-Club/DiscordBot">Our bot’s source code</a></li>
 </ul>
-<h3 id="minecraft-modserver">Minecraft Mod/Server</h3>
+<h3 id="minecraft-modserver"><span>Minecraft Mod/Server</span><a class="ms-2" href="#minecraft-modserver"><svg class="bi heading-anchor-icon"><title>Link icon</title></svg></a></h3>
 <p>Mid last year we soft launched our new modded Minecraft server with <a href="https://modrinth.com/mod/terralith">Terralith</a> for more interesting terrain generation and <a href="https://modrinth.com/mod/cc-tweaked">CC: Tweaked</a> i.e updated Computer Craft so we can program with Lua inside the game.
 Shortly after starting the server, we began to further mod the game with changes of our own design.
 Currently, our mod just adds explosion proof glass but we welcome suggestions for more features.</p>
 <p>If there is interest, we plan to get back into playing during the holidays before semester 1 starts.</p>
 <p><a href="#minecraftExamples" role="button" data-bs-toggle="collapse" data-bs-target="#minecraftExamples" aria-expanded="true" aria-controls="minecraftExamples">Toggle server example screenshots</a></p>
-<div id="minecraftExamples" class="carousel slide multi-collapse show mt-3">
+<div id="minecraftExamples" class="carousel slide multi-collapse show">
 <div class="carousel-indicators">
 <button type="button" data-bs-target="#minecraftExamples" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1">
 </button>
@@ -305,7 +305,7 @@ Currently, our mod just adds explosion proof glass but we welcome suggestions fo
 <ul>
 <li><a href="https://github.com/UTAS-Programming-Club/HardenedGlass">Our mod’s source code</a></li>
 </ul>
-<h3 id="this-website">This Website</h3>
+<h3 id="this-website"><span>This Website</span><a class="ms-2" href="#this-website"><svg class="bi heading-anchor-icon"><title>Link icon</title></svg></a></h3>
 <p>What you are seeing now is a a major redesign of our original website.
 Both are static websites hosted on GitHub but the updated site allows us to write pages in Markdown and then convert to HTML using <a href="https://pandoc.org/">Pandoc</a> which should be much easier to maintain.
 Additionally, major sections of the site like the top nav bar are generated entirely automatically to avoid having to modify every page whenever something changes.

@@ -25,7 +25,7 @@
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-  <input id="dark-mode-toggle" type="checkbox" class="btn-check" name="dark-mode-toggle" hidden>
+  <input type="checkbox" id="dark-mode-toggle" hidden>
   <div id="background" class="h-100 overflow-x-hidden bg-secondary-subtle">
     <div id="foreground" class="mx-auto my-4 pt-2 pb-1 px-3 bg-body border border-secondary">
       <header>
@@ -36,24 +36,24 @@
             <img height="64" class="pe-2" src="assets/icon.png" alt="Programming Club logo">
           </picture>
           <h1 class="me-auto">Programming Club</h1>
-          <label class="btn btn-link mb-2 d-none d-sm-block" for="dark-mode-toggle" tabindex="0" onclick="ToggleDarkMode()" onkeydown="ToggleDarkMode()">
+          <label for="dark-mode-toggle" class="btn btn-link mb-2 d-none d-sm-block" tabindex="0" onclick="ToggleDarkMode()" onkeydown="ToggleDarkMode()">
             <svg class="bi bg-warning light-mode-icon"><title>Sun icon</title></svg>
             <svg class="bi bg-white dark-mode-icon"><title>Moon icon</title></svg>
           </label>
         </div>
-        <!-- TODO: Support toggling menu without js on mobile -->
         <!-- TODO: Decide if .navbar-expand-sm would be fine -->
-        <nav class="navbar navbar-expand-md">
+        <nav class="navbar navbar-expand-md" role="navigation">
           <div class="container-fluid ps-2 pe-0 pe-sm-2">
-            <button type="button" class="navbar-toggler mt-2" data-bs-toggle="collapse" data-bs-target="#navbarPages" aria-controls="navbarPages" aria-expanded="false" aria-label="Toggle header navigation with pages">
+            <input type="checkbox" id="nav-toggle" hidden>
+            <label for="nav-toggle" class="navbar-toggler mt-2" tabindex="0" aria-haspopup="true" aria-controls="navbar-pages" aria-expanded="false" aria-label="Toggle header navigation with pages">
               <span class="navbar-toggler-icon"></span>
-            </button>
-            <label class="btn btn-link mt-2 d-block d-sm-none" for="dark-mode-toggle" tabindex="0" onclick="ToggleDarkMode()" onkeydown="ToggleDarkMode()">
+            </label>
+            <label for="dark-mode-toggle" class="btn btn-link mt-2 d-block d-sm-none" tabindex="0" onclick="ToggleDarkMode()" onkeydown="ToggleDarkMode()">
               <svg class="bi text-bg-warning light-mode-icon"><title>Sun icon</title></svg>
               <svg class="bi bg-white dark-mode-icon"><title>Moon icon</title></svg>
             </label>
-            <div id="navbarPages" class="collapse navbar-collapse pt-3">
-              <ul class="navbar-nav nav-justified w-100 mb-2 mb-md-0">
+            <div id="navbar-pages" class="navbar-collapse overflow-hidden pt-3">
+              <ul class="navbar-nav nav-justified w-100 mb-2 mb-md-0" aria-label="submenu">
                 <li class="nav-item mb-2 px-2">
                   <a class="nav-link pt-1" href="index.html">Home</a>
                 </li>
@@ -79,11 +79,11 @@
 <p>To focus our learning and efforts, the Club runs various projects which members are encouraged to contribute to. See the projects page for more details. Our main aim is to push people to improve while keeping projects accessible for people with varying skill levels and abilities.</p>
 <p>If anyone has any questions for the Club, please send us a message via either Discord or <a href="mailto:%20contact@programmingclub.com.au">Email</a>.</p>
 <p><img src="https://programmingclub.com.au/assets/photos/weekly_meetup_cropped.jpg" title="A weekly meetup at the Sandy Bay Campus" class="img-fluid" alt="Club members in a large room with a big screen at a weekly meetup"></p>
-<h3 id="committee"><span>Committee</span><a class="ms-2" href="#committee"><svg class="bi heading-anchor-icon"><title>Link icon</title></svg></a></h3>
+<h3 id="committee"><span>Committee</span><a class="ms-2" href="#committee"><svg class="heading-anchor-icon"><title>Link icon</title></svg></a></h3>
 <p>The Club’s affairs are managed by the Committee.</p>
 <p>If you wish to contact a committee member via Discord, please do it via our server unless they give permission to do so privately. We would prefer if sensitive matters were handled via email.</p>
 <p>For the 2024-2025 Club year, the Committee is made up by the following people (preferred names, if any, are in brackets):</p>
-<h4 id="president"><span>President</span><a class="ms-2" href="#president"><svg class="bi heading-anchor-icon"><title>Link icon</title></svg></a></h4>
+<h4 id="president"><span>President</span><a class="ms-2" href="#president"><svg class="heading-anchor-icon"><title>Link icon</title></svg></a></h4>
 <p>The president is to act as the chairperson at meetings, and act as a spokesperson for the Club.<br>
 <strong>Officeholder:</strong> Kentaro Watts<br>
 Email: <a href="mailto:president@programmingclub.com.au" class="email">president@programmingclub.com.au</a><br>
@@ -92,7 +92,7 @@ Email: <a href="mailto:president@programmingclub.com.au" class="email">president
 <source srcset="assets/Committee%20Kentaro.webp" type="image/webp">
 <img src="assets/Committee%20Kentaro.jpg" height="200" alt="Portrait of Kentaro Watts">
 </picture></p>
-<h4 id="treasurer"><span>Treasurer</span><a class="ms-2" href="#treasurer"><svg class="bi heading-anchor-icon"><title>Link icon</title></svg></a></h4>
+<h4 id="treasurer"><span>Treasurer</span><a class="ms-2" href="#treasurer"><svg class="heading-anchor-icon"><title>Link icon</title></svg></a></h4>
 <p>The Treasurer is responsible for overseeing the Club’s financial activities, keeping accurate records of funds and assets, and preparing and presenting budgets for new or ongoing projects.<br>
 <strong>Officeholder</strong>: Lachlan McKay<br>
 Email: <a href="mailto:treasurer@programmingclub.com.au" class="email">treasurer@programmingclub.com.au</a><br>
@@ -101,7 +101,7 @@ Email: <a href="mailto:treasurer@programmingclub.com.au" class="email">treasurer
 <source srcset="assets/Committee%20Lachlan.webp" type="image/webp">
 <img src="assets/Committee%20Lachlan.jpg" height="200" alt="Portrait of Lachlan McKay">
 </picture></p>
-<h4 id="secretary"><span>Secretary</span><a class="ms-2" href="#secretary"><svg class="bi heading-anchor-icon"><title>Link icon</title></svg></a></h4>
+<h4 id="secretary"><span>Secretary</span><a class="ms-2" href="#secretary"><svg class="heading-anchor-icon"><title>Link icon</title></svg></a></h4>
 <p>The Secretary ensures meetings are effectively organised and minuted, maintains effective membership records, and documents the Club’s communication and correspondence.<br>
 <strong>Officeholder</strong>: Cameron Munro<br>
 Email: <a href="mailto:secretary@programmingclub.com.au" class="email">secretary@programmingclub.com.au</a><br>
@@ -110,7 +110,7 @@ Email: <a href="mailto:secretary@programmingclub.com.au" class="email">secretary
 <source srcset="assets/Committee%20Cameron.webp" type="image/webp">
 <img src="assets/Committee%20Cameron.jpg" height="200" alt="Portrait of Cameron Munro">
 </picture></p>
-<h4 id="southern-technical-support-officer"><span>Southern Technical Support Officer</span><a class="ms-2" href="#southern-technical-support-officer"><svg class="bi heading-anchor-icon"><title>Link icon</title></svg></a></h4>
+<h4 id="southern-technical-support-officer"><span>Southern Technical Support Officer</span><a class="ms-2" href="#southern-technical-support-officer"><svg class="heading-anchor-icon"><title>Link icon</title></svg></a></h4>
 <p>The Southern Technical Support Officer runs the Club’s projects and meetups, and help members with programming issues and learning to code, focusing on southern Tasmania.<br>
 <strong>Officeholder</strong>: Joshua Wierenga<br>
 Email: <a href="mailto:tech@programmingclub.com.au" class="email">tech@programmingclub.com.au</a>, this is subject to change<br>
@@ -119,7 +119,7 @@ Email: <a href="mailto:tech@programmingclub.com.au" class="email">tech@programmi
 <source srcset="assets/Committee%20Joshua.webp" type="image/webp">
 <img src="assets/Committee%20Joshua.jpg" height="200" alt="Portrait of Joshua Wierenga">
 </picture></p>
-<h4 id="marketing-officer"><span>Marketing Officer</span><a class="ms-2" href="#marketing-officer"><svg class="bi heading-anchor-icon"><title>Link icon</title></svg></a></h4>
+<h4 id="marketing-officer"><span>Marketing Officer</span><a class="ms-2" href="#marketing-officer"><svg class="heading-anchor-icon"><title>Link icon</title></svg></a></h4>
 <p>The Marketing Officer prepares and distributes advertising material, and tries to get members to attend the Club’s events.<br>
 <strong>Officeholder</strong>: Kat Carolan<br>
 Email: <a href="mailto:marketing@programmingclub.com.au" class="email">marketing@programmingclub.com.au</a><br>
@@ -129,19 +129,19 @@ Email: <a href="mailto:marketing@programmingclub.com.au" class="email">marketing
 <img src="assets/Committee%20Kat.jpg" height="200" alt="Portrait of Kat Carolan">
 </picture></p>
 <!-- TODO: Get photo of Michael -->
-<h4 id="northern-technical-support-officer"><span>Northern Technical Support Officer</span><a class="ms-2" href="#northern-technical-support-officer"><svg class="bi heading-anchor-icon"><title>Link icon</title></svg></a></h4>
+<h4 id="northern-technical-support-officer"><span>Northern Technical Support Officer</span><a class="ms-2" href="#northern-technical-support-officer"><svg class="heading-anchor-icon"><title>Link icon</title></svg></a></h4>
 <p>The Northern Technical Support Officer runs the Club’s projects and meetups, and help members with programming issues and learning to code, focusing on northern Tasmania.<br>
 <strong>Officeholder</strong>: Michael Dacey<br>
 Email: Currently does not have a dedicated email, please just use <a href="mailto:contact@programmingclub.com.au" class="email">contact@programmingclub.com.au</a> for the now<br>
 <img height="200" src="https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg" alt="Placeholder image for portrait"></p>
 <!-- TODO: Get general member photos? -->
-<h4 id="general-members"><span>General Members</span><a class="ms-2" href="#general-members"><svg class="bi heading-anchor-icon"><title>Link icon</title></svg></a></h4>
+<h4 id="general-members"><span>General Members</span><a class="ms-2" href="#general-members"><svg class="heading-anchor-icon"><title>Link icon</title></svg></a></h4>
 <p>General Members have no specific responsibilies but are required to assist with the Club’s activities whenever necessary.</p>
 <ul>
 <li>Tran (Luke), Hau Duc</li>
 <li>Oliver Kulinski</li>
 </ul>
-<h4 id="unfilled-positions"><span>Unfilled positions</span><a class="ms-2" href="#unfilled-positions"><svg class="bi heading-anchor-icon"><title>Link icon</title></svg></a></h4>
+<h4 id="unfilled-positions"><span>Unfilled positions</span><a class="ms-2" href="#unfilled-positions"><svg class="heading-anchor-icon"><title>Link icon</title></svg></a></h4>
 <p><span class="list-heading">In addition to the positions listed above, we also have some that are currently unfilled:</span></p>
 <ul>
 <li>Northern and Southern Education Officers<br>
@@ -153,7 +153,7 @@ The Northern Marketing Officer would prepare and distribute advertising material
 <li>Two General Member positions</li>
 </ul>
 <p>Members are encouraged to contact us if they are at all interested in running for these positions as we would love some assistance.</p>
-<h3 id="constitution"><span>Constitution</span><a class="ms-2" href="#constitution"><svg class="bi heading-anchor-icon"><title>Link icon</title></svg></a></h3>
+<h3 id="constitution"><span>Constitution</span><a class="ms-2" href="#constitution"><svg class="heading-anchor-icon"><title>Link icon</title></svg></a></h3>
 <p>The Club is governed by a constitution which is included below:<br>
 <a href="assets/Programming%20Club%20Constitution.pdf">Link to fullsize copy</a>
 <embed src="assets/Programming%20Club%20Constitution.pdf" class="w-100 constitution" type="application/pdf"></p>

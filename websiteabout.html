@@ -25,7 +25,7 @@
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-  <input id="dark-mode-toggle" type="checkbox" class="btn-check" name="dark-mode-toggle" hidden>
+  <input type="checkbox" id="dark-mode-toggle" hidden>
   <div id="background" class="h-100 overflow-x-hidden bg-secondary-subtle">
     <div id="foreground" class="mx-auto my-4 pt-2 pb-1 px-3 bg-body border border-secondary">
       <header>
@@ -36,24 +36,24 @@
             <img height="64" class="pe-2" src="assets/icon.png" alt="Programming Club logo">
           </picture>
           <h1 class="me-auto">Programming Club</h1>
-          <label class="btn btn-link mb-2 d-none d-sm-block" for="dark-mode-toggle" tabindex="0" onclick="ToggleDarkMode()" onkeydown="ToggleDarkMode()">
+          <label for="dark-mode-toggle" class="btn btn-link mb-2 d-none d-sm-block" tabindex="0" onclick="ToggleDarkMode()" onkeydown="ToggleDarkMode()">
             <svg class="bi bg-warning light-mode-icon"><title>Sun icon</title></svg>
             <svg class="bi bg-white dark-mode-icon"><title>Moon icon</title></svg>
           </label>
         </div>
-        <!-- TODO: Support toggling menu without js on mobile -->
         <!-- TODO: Decide if .navbar-expand-sm would be fine -->
-        <nav class="navbar navbar-expand-md">
+        <nav class="navbar navbar-expand-md" role="navigation">
           <div class="container-fluid ps-2 pe-0 pe-sm-2">
-            <button type="button" class="navbar-toggler mt-2" data-bs-toggle="collapse" data-bs-target="#navbarPages" aria-controls="navbarPages" aria-expanded="false" aria-label="Toggle header navigation with pages">
+            <input type="checkbox" id="nav-toggle" hidden>
+            <label for="nav-toggle" class="navbar-toggler mt-2" tabindex="0" aria-haspopup="true" aria-controls="navbar-pages" aria-expanded="false" aria-label="Toggle header navigation with pages">
               <span class="navbar-toggler-icon"></span>
-            </button>
-            <label class="btn btn-link mt-2 d-block d-sm-none" for="dark-mode-toggle" tabindex="0" onclick="ToggleDarkMode()" onkeydown="ToggleDarkMode()">
+            </label>
+            <label for="dark-mode-toggle" class="btn btn-link mt-2 d-block d-sm-none" tabindex="0" onclick="ToggleDarkMode()" onkeydown="ToggleDarkMode()">
               <svg class="bi text-bg-warning light-mode-icon"><title>Sun icon</title></svg>
               <svg class="bi bg-white dark-mode-icon"><title>Moon icon</title></svg>
             </label>
-            <div id="navbarPages" class="collapse navbar-collapse pt-3">
-              <ul class="navbar-nav nav-justified w-100 mb-2 mb-md-0">
+            <div id="navbar-pages" class="navbar-collapse overflow-hidden pt-3">
+              <ul class="navbar-nav nav-justified w-100 mb-2 mb-md-0" aria-label="submenu">
                 <li class="nav-item mb-2 px-2">
                   <a class="nav-link pt-1" href="index.html">Home</a>
                 </li>
@@ -92,11 +92,11 @@ Using <a href="https://commons.wikimedia.org/wiki/File:No-Image-Placeholder.svg"
 <li>Bootstrap version: v5.3.3</li>
 <li>Bootstrap Icons version: v1.13.3
 <!-- TODO: Parse to local time with js? --></li>
-<li>Last built: 2025-01-24T23:57:13+11:00</li>
-<li>Git commit: 247596eb03fba21ed5eeb4c7476d1cb931a5ec8d</li>
+<li>Last built: 2025-01-25T15:31:08+11:00</li>
+<li>Git commit: da8c65d0463f3dcc49d0602ea603f2ff1f4762cd</li>
 <li>Git commit author(s): Joshua Wierenga (joshuagit@joshuawierenga.tech)
 <!-- TODO: Parse to local time with js? --></li>
-<li>Git commit time: 2025-01-24T23:50:04+11:00</li>
+<li>Git commit time: 2025-01-25T15:17:04+11:00</li>
 <li>Git commit branch: main</li>
 </ul>
 <p><span class="js-only" hidden="hidden">None: Using a js based dark mode system with full persistance between pages and browser level support. Try without js to see the differences!</span>

@@ -36,8 +36,10 @@ body, html {
 }
 
 #nav-toggle:not(:checked) ~ #navbar-pages {
-  max-height: 0;
-  padding-top: 0 !important;
+  /* 0px if width < --bs-breakpoint-md, else >= 200px */
+  max-height: round(to-zero, calc(200px + 100vw - var(--bs-breakpoint-md)), 200px);
+  /* 0rem if width < --bs-breakpoint-md, else 1rem */
+  padding-top: calc(round(to-zero, 1000000rem + 100vw - var(--bs-breakpoint-md), 1000000rem) / 1000000) !important;
   transition-delay: 0s, 0.30s;
 }
 

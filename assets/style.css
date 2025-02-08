@@ -41,11 +41,11 @@ body, html {
   transition-delay: 0s, 0.30s;
 }
 
-.navbar-expand-md .navbar-collapse {
+.navbar-expand-md {
   --bs-breakpoint-toggle: var(--bs-breakpoint-md);
 }
 
-.navbar-expand-lg .navbar-collapse {
+.navbar-expand-lg {
   --bs-breakpoint-toggle: var(--bs-breakpoint-lg);
 }
 

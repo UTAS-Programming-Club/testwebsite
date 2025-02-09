@@ -67,6 +67,7 @@ for output_page in $PAGES; do
   done
   navbar="$navbar              "
 
+  printf "Processing %s\n" "pages/$output_page.md"
   bin/pandoc templates/setup.yaml -s --template templates/template.html -f markdown-implicit_figures\
              --wrap=preserve -B templates/header.html -A templates/footer.html "pages/$output_page.md"\
              -o "output/$output_page.html"
@@ -83,34 +84,37 @@ cp assets/script.js output/assets/script.js
 cp assets/style.css output/assets/style.css
 cp assets/"Programming Club Constitution.pdf" output/assets/"Programming Club Constitution.pdf"
 
+process_image() {
+  FILE="${1%.*}"
+  dirname "output/$image" | xargs mkdir -p
+
+  if [ -f "output/$FILE.avif" ] && [ -f "output/$FILE.png" ] && [ -f "output/$FILE.webp" ]; then
+    printf "Skipping %s\n" "$1"
+  else
+    printf "Processing %s\n" "$1"
+  fi
+
+  # shellcheck disable=SC2086
+  [ -f "output/$FILE.avif" ] || bin/magick "$1" -strip -background none $2 "output/$FILE.avif" &
+  # shellcheck disable=SC2086
+  [ -f "output/$FILE.png" ]  || bin/magick "$1" -strip -background none $2 "output/$FILE.png" &
+  # shellcheck disable=SC2086
+  [ -f "output/$FILE.webp" ] || bin/magick "$1" -strip -background none $2 "output/$FILE.webp"
+  wait
+}
+
 [ -f output/assets/favicon.ico ] || bin/magick assets/DraftPCLogoV2.png -strip -background none -resize 48x48 -density 48x48 output/assets/favicon.ico
-[ -f output/assets/icon.avif ]   || bin/magick assets/DraftPCLogoV2.png -strip -background none -compress lossless -resize 250x253 -density 250x253 output/assets/icon.avif
-[ -f output/assets/icon.png ]    || bin/magick assets/DraftPCLogoV2.png -strip -background none -compress lossless -resize 250x253 -density 250x253 output/assets/icon.png
-[ -f output/assets/icon.webp ]   || bin/magick assets/DraftPCLogoV2.png -strip -background none -compress lossless -resize 250x253 -density 250x253 output/assets/icon.webp
+process_image assets/DraftPCLogoV2.png "-compress lossless -resize 250x253 -density 250x253"
 
-for image in assets/Committee*.jpg; do
-  NAME=$(basename "$image" .jpg)
-  [ -f "output/assets/$NAME.avif" ] || bin/magick "$image" -strip -background none -resize 250x250 -density 250x250 "output/assets/$NAME.avif"
-  [ -f "output/assets/$NAME.jpg" ]  || bin/magick "$image" -strip -background none -resize 250x250 -density 250x250 "output/assets/$NAME.jpg"
-  [ -f "output/assets/$NAME.webp" ] || bin/magick "$image" -strip -background none -resize 250x250 -density 250x250 "output/assets/$NAME.webp"
+for image in assets/2023-2024/committee-*.jpg assets/2024-2025/committee-*.jpg; do
+  process_image "$image" "-compress lossless"
 done
 
-for image in assets/discord-*.png; do
-  NAME=$(basename "$image" .png)
-  [ -f "output/assets/$NAME.avif" ] || bin/magick "$image" -strip -background none -compress lossless "output/assets/$NAME.avif"
-  [ -f "output/assets/$NAME.png" ]  || bin/magick "$image" -strip -background none -compress lossless "output/assets/$NAME.png"
-  [ -f "output/assets/$NAME.webp" ] || bin/magick "$image" -strip -background none -compress lossless "output/assets/$NAME.webp"
+for image in assets/2023-2024/discord-*.png assets/2024-2025/discord-*.png; do
+  process_image "$image" "-compress lossless"
 done
 
-[ -f output/assets/minecraft-1.avif ] || bin/magick assets/minecraft-1.png -strip -background none -resize 1024x576 -density 1024x576 output/assets/minecraft-1.avif
-[ -f output/assets/minecraft-1.png ]  || bin/magick assets/minecraft-1.png -strip -background none -resize 1024x576 -density 1024x576 output/assets/minecraft-1.png
-[ -f output/assets/minecraft-1.webp ] || bin/magick assets/minecraft-1.png -strip -background none -resize 1024x576 -density 1024x576 output/assets/minecraft-1.webp
-[ -f output/assets/minecraft-2.avif ] || bin/magick assets/minecraft-2.png -strip -background none -resize 1024x576 -density 1024x576 output/assets/minecraft-2.avif
-[ -f output/assets/minecraft-2.png ]  || bin/magick assets/minecraft-2.png -strip -background none -resize 1024x576 -density 1024x576 output/assets/minecraft-2.png
-[ -f output/assets/minecraft-2.webp ] || bin/magick assets/minecraft-2.png -strip -background none -resize 1024x576 -density 1024x576 output/assets/minecraft-2.webp
-[ -f output/assets/minecraft-3.avif ] || bin/magick assets/minecraft-3.png -strip -background none -resize  521x576 -density  521x576 output/assets/minecraft-3.avif
-[ -f output/assets/minecraft-3.png ]  || bin/magick assets/minecraft-3.png -strip -background none -resize  521x576 -density  521x576 output/assets/minecraft-3.png
-[ -f output/assets/minecraft-3.webp ] || bin/magick assets/minecraft-3.png -strip -background none -resize  521x576 -density  521x576 output/assets/minecraft-3.webp
-[ -f output/assets/minecraft-4.avif ] || bin/magick assets/minecraft-4.png -strip -background none -resize 1024x576 -density 1024x576 output/assets/minecraft-4.avif
-[ -f output/assets/minecraft-4.png ]  || bin/magick assets/minecraft-4.png -strip -background none -resize 1024x576 -density 1024x576 output/assets/minecraft-4.png
-[ -f output/assets/minecraft-4.webp ] || bin/magick assets/minecraft-4.png -strip -background none -resize 1024x576 -density 1024x576 output/assets/minecraft-4.webp
+process_image assets/2023-2024/minecraft-1.png "-resize 1024x576 -density 1024x576"
+process_image assets/2023-2024/minecraft-2.png "-resize 1024x576 -density 1024x576"
+process_image assets/2023-2024/minecraft-3.png "-resize  521x576 -density  521x576"
+process_image assets/2023-2024/minecraft-4.png "-resize 1024x576 -density 1024x576"

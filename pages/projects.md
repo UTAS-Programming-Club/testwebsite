@@ -152,23 +152,23 @@ Recently, we used the bot to list scores from our private Advent of Code 2024 le
 :::: carousel-inner
 ::::: {class="carousel-item active"}
 <picture>
-  <source srcset="assets/discord-minesweeper.avif" type="image/avif">
-  <source srcset="assets/discord-minesweeper.webp" type="image/webp">
-  ![Example of minesweeper commmand](assets/discord-minesweeper.png){class="d-block m-auto w-auto"}
+  <source srcset="assets/2023-2024/discord-minesweeper.avif" type="image/avif">
+  <source srcset="assets/2023-2024/discord-minesweeper.webp" type="image/webp">
+  ![Example of minesweeper commmand](assets/2023-2024/discord-minesweeper.png){class="d-block m-auto w-auto"}
 </picture>
 :::::
 ::::: carousel-item
 <picture>
-  <source srcset="assets/discord-hangman.avif" type="image/avif">
-  <source srcset="assets/discord-hangman.webp" type="image/webp">
-  ![Example of hangman commmand](assets/discord-hangman.png){class="d-block m-auto w-auto"}
+  <source srcset="assets/2023-2024/discord-hangman.avif" type="image/avif">
+  <source srcset="assets/2023-2024/discord-hangman.webp" type="image/webp">
+  ![Example of hangman commmand](assets/2023-2024/discord-hangman.png){class="d-block m-auto w-auto"}
 </picture>
 :::::
 ::::: carousel-item
 <picture>
-  <source srcset="assets/discord-aoc.avif" type="image/avif">
-  <source srcset="assets/discord-aoc.webp" type="image/webp">
-  ![Example of advent of code leaderboard commmand](assets/discord-aoc.png){class="d-block m-auto w-auto"}
+  <source srcset="assets/2024-2025/discord-aoc.avif" type="image/avif">
+  <source srcset="assets/2024-2025/discord-aoc.webp" type="image/webp">
+  ![Example of advent of code leaderboard commmand](assets/2024-2025/discord-aoc.png){class="d-block m-auto w-auto"}
 </picture>
 :::::
 ::::

@@ -22,9 +22,9 @@ The president is to act as the chairperson at meetings, and act as a spokesperso
 **Officeholder:** Kentaro Watts  
 Email: <president@programmingclub.com.au>  
 <picture>
-  <source srcset="assets/Committee%20Kentaro.avif" type="image/avif">
-  <source srcset="assets/Committee%20Kentaro.webp" type="image/webp">
-  ![Portrait of Kentaro Watts](assets/Committee%20Kentaro.jpg){height="200"}
+  <source srcset="assets/2023-2024/committee-kentaro.avif" type="image/avif">
+  <source srcset="assets/2023-2024/committee-kentaro.webp" type="image/webp">
+  ![Portrait of Kentaro Watts](assets/2023-2024/committee-kentaro.jpg){height="200"}
 </picture>
 
 #### Treasurer
@@ -32,9 +32,9 @@ Email: <president@programmingclub.com.au>
 **Officeholder**: Lachlan McKay  
 Email: <treasurer@programmingclub.com.au>  
 <picture>
-  <source srcset="assets/Committee%20Lachlan.avif" type="image/avif">
-  <source srcset="assets/Committee%20Lachlan.webp" type="image/webp">
-  ![Portrait of Lachlan McKay](assets/Committee%20Lachlan.jpg){height="200"}
+  <source srcset="assets/2024-2025/committee-lachlan.avif" type="image/avif">
+  <source srcset="assets/2024-2025/committee-lachlan.webp" type="image/webp">
+  ![Portrait of Lachlan McKay](assets/2024-2025/committee-lachlan.jpg){height="200"}
 </picture>
 
 #### Secretary
@@ -42,9 +42,9 @@ The Secretary ensures meetings are effectively organised and minuted, maintains 
 **Officeholder**: Cameron Munro  
 Email: <secretary@programmingclub.com.au>  
 <picture>
-  <source srcset="assets/Committee%20Cameron.avif" type="image/avif">
-  <source srcset="assets/Committee%20Cameron.webp" type="image/webp">
-  ![Portrait of Cameron Munro](assets/Committee%20Cameron.jpg){height="200"}
+  <source srcset="assets/2023-2024/committee-cameron.avif" type="image/avif">
+  <source srcset="assets/2023-2024/committee-cameron.webp" type="image/webp">
+  ![Portrait of Cameron Munro](assets/2023-2024/committee-cameron.jpg){height="200"}
 </picture>
 
 #### Southern Technical Support Officer
@@ -52,9 +52,9 @@ The Southern Technical Support Officer runs the Club's projects and meetups, and
 **Officeholder**: Joshua Wierenga  
 Email: <tech@programmingclub.com.au>, this is subject to change  
 <picture>
-  <source srcset="assets/Committee%20Joshua.avif" type="image/avif">
-  <source srcset="assets/Committee%20Joshua.webp" type="image/webp">
-  ![Portrait of Joshua Wierenga](assets/Committee%20Joshua.jpg){height="200"}
+  <source srcset="assets/2023-2024/committee-joshua.avif" type="image/avif">
+  <source srcset="assets/2023-2024/committee-joshua.webp" type="image/webp">
+  ![Portrait of Joshua Wierenga](assets/2023-2024/committee-joshua.jpg){height="200"}
 </picture>
 
 #### Marketing Officer
@@ -62,9 +62,9 @@ The Marketing Officer prepares and distributes advertising material, and tries t
 **Officeholder**: Kat Carolan  
 Email: <marketing@programmingclub.com.au>  
 <picture>
-  <source srcset="assets/Committee%20Kat.avif" type="image/avif">
-  <source srcset="assets/Committee%20Kat.webp" type="image/webp">
-  ![Portrait of Kat Carolan](assets/Committee%20Kat.jpg){height="200"}
+  <source srcset="assets/2023-2024/committee-kat.avif" type="image/avif">
+  <source srcset="assets/2023-2024/committee-kat.webp" type="image/webp">
+  ![Portrait of Kat Carolan](assets/2023-2024/committee-kat.jpg){height="200"}
 </picture>
 
 <!-- TODO: Get photo of Michael -->

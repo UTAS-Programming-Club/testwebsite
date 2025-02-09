@@ -103,8 +103,8 @@ process_image() {
   wait
 }
 
-[ -f output/assets/favicon.ico ] || bin/magick assets/DraftPCLogoV2.png -strip -background none -resize 48x48 -density 48x48 output/assets/favicon.ico
-process_image assets/DraftPCLogoV2.png "-compress lossless -resize 250x253 -density 250x253"
+[ -f output/assets/favicon.ico ] || bin/magick assets/logo.png -strip -background none -resize 48x48 -density 48x48 output/assets/favicon.ico
+process_image assets/logo.png "-compress lossless -resize 250x253 -density 250x253"
 
 for image in assets/2023-2024/committee-*.jpg assets/2024-2025/committee-*.jpg; do
   process_image "$image" "-compress lossless"

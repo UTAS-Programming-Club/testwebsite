@@ -103,7 +103,7 @@ process_image() {
   wait
 }
 
-[ -f output/assets/favicon.ico ] || bin/magick assets/logo.png -strip -background none -resize 48x48 -density 48x48 output/assets/favicon.ico
+[ -f output/assets/favicon.ico ] || bin/magick assets/logo.webp -strip -background none -resize 48x48 -density 48x48 output/assets/favicon.ico
 process_image assets/logo.webp "-compress lossless -resize 250x250 -density 250x250"
 
 for image in assets/2023-2024/committee-*.jpg assets/2024-2025/committee-*.jpg; do

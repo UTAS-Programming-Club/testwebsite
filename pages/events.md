@@ -106,13 +106,22 @@ Additionally, we are currently planning our own jam tentatively scheduled for th
 We have run combined games and movie nights with the Maths and Physics Society since 2023.\
 The next one is planned for the 15th of April in Week 8, hopefully we well see you there. [Entry](https://campus.hellorubric.com/?eid=34039)(via Rubric) is free for members of either club.
 
+<!-- TODO: Mentioned involved clubs -->
+<!-- TODO: Link to Rubric sign up page once up -->
+<!-- TODO: Add pictures -->
 ### STEM Balls
-<!-- TODO: Mention STEM balls in 2023 and 2024, and plans for the 2025 -->
+The Programming Club has helped organise the annual STEM ball and many of our members have attended ever since the inaugural ball in 2023.
+The STEM Ball is run by the UTAS clubs in the STEM fields (minus engineering), and is their social highlight of the year.
 
+The next STEM ball will be on 20 September 2025. Tickets will be $80 for members of any of the associated clubs and $90 otherwise. We should have the Rubric ticket sale page up soon with some more details.
+
+<!-- TODO: Link to Stem BBQ Rubric sign up page once up -->
 ### BBQs
 We have held public barbeques on the Sandy Bay campus since 2023 with cheap food available and even discounts for members.
 We cater to as many people as possible by offering both meat and vegan options as well as soft drinks.\
 They are one of the events where the Club engages with the wider student community.
+
+We currently do not have one scheduled for this year but will be helping out with the STEM Ball announcement BBQ on the 21st of May at the Sandy Bay campus, more details later on.
 
 ### Industry Nights
 In 2023 we ran an educational event with former students taking about their experiences finding work in Tasmania and more broardly in Australia.

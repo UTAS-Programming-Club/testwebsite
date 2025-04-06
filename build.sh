@@ -27,7 +27,7 @@ if [ "$BUILD_COMMIT_AUTHORS" != "$BUILD_COMMIT_COMMITTER" ]; then
   BUILD_COMMIT_AUTHORS="$BUILD_COMMIT_AUTHORS, $BUILD_COMMIT_COMMITTER"
 fi
 
-mkdir -p output/assets/
+mkdir -p output/assets/2021-2022 output/assets/2022-2023
 
 for output_page in $PAGES; do
   if [ ! -f pages/"$output_page".md ]; then
@@ -114,7 +114,24 @@ for image in assets/2023-2024/discord-*.png assets/2024-2025/discord-*.png; do
   process_image "$image" "-compress lossless"
 done
 
-process_image assets/2023-2024/minecraft-1.png "-resize 1024x576 -density 1024x576"
-process_image assets/2023-2024/minecraft-2.png "-resize 1024x576 -density 1024x576"
-process_image assets/2023-2024/minecraft-3.png "-resize  521x576 -density  521x576"
-process_image assets/2023-2024/minecraft-4.png "-resize 1024x576 -density 1024x576"
+process_image assets/2023-2024/minecraft-1.png       "-resize 1024x576 -density 1024x576"
+process_image assets/2023-2024/minecraft-2.png       "-resize 1024x576 -density 1024x576"
+process_image assets/2023-2024/minecraft-3.png       "-resize  521x576 -density  521x576"
+process_image assets/2024-2025/minecraft-highway.png "-resize 1024x576 -density 1024x576"
+
+process_image assets/2021-2022/first_meetup.jpg     "-resize  960x502 -density  960x502"
+process_image assets/2022-2023/holiday-meetup-1.jpg "-resize  720x540 -density  720x540"
+process_image assets/2022-2023/meetup-2.jpg         "-resize  921x691 -density  921x691"
+process_image assets/2023-2024/meetup.jpg           "-resize 1008x567 -density 1008x567"
+
+process_image assets/2023-2024/tasjam-1.jpg "-resize 806x604 -density 806x604"
+process_image assets/2023-2024/tasjam-2.jpg "-resize 806x604 -density 806x604"
+
+process_image assets/2022-2023/industry-night-1.jpg "-resize 1008x496 -density 1008x496"
+process_image assets/2022-2023/industry-night-2.jpg "-resize 1008x496 -density 1008x496"
+process_image assets/2022-2023/industry-night-4.jpg "-resize 1008x496 -density 1008x496"
+
+process_image assets/2022-2023/c\&s-1-cropped.jpg "-resize  985x625 -density  985x625"
+process_image assets/2022-2023/open-day.jpg       "-resize 1080x608 -density 1080x608"
+process_image assets/2023-2024/mini-c\&s.jpg      "-resize  806x604 -density  806x604"
+process_image assets/2024-2025/c\&s.png           "-resize  560x560 -density  560x560"

@@ -228,10 +228,12 @@ We should be at the Mini C&S day during Semester 2 in 2025 so hopefully we will 
 </button>
 :::
 
+<!-- TODO: Release SGM and AGM minutes -->
 ### General Meetings
 Our general meetings are held to discuss broader club matters such as significant club decisions and the election of officers.
 All Club members are invited to attend and may vote in proceedings.
-There are two types of general meeting: our annual general meeting which has run every year since 2021; and special general meetings, which will be run whenever there is important business to discuss including recently in both 2023 and 2024.
+There are two types of general meeting: our annual general meeting which has run every year since 2021;
+and special general meetings, which run whenever there is important business including most recently in both April 2023 and March 2024.
 
 Our next general meeting should be in October 2025 and will hopefully be followed by a movie night!
 

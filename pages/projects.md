@@ -149,7 +149,7 @@ Recently, we used the bot to list scores from our private Advent of Code 2024 le
 <button type="button" data-bs-target="#discordBotExamples" data-bs-slide-to="1" aria-label="Slide 2"></button>
 <button type="button" data-bs-target="#discordBotExamples" data-bs-slide-to="2" aria-label="Slide 3"></button>
 ::::
-:::: carousel-inner
+:::: {class="carousel-inner pb-4"}
 ::::: {class="carousel-item active"}
 <picture>
   <source srcset="assets/2023-2024/discord-minesweeper.avif" type="image/avif">
@@ -202,33 +202,33 @@ If there is interest, we plan to get back into playing during the holidays befor
 <button type="button" data-bs-target="#minecraftExamples" data-bs-slide-to="2" aria-label="Slide 3"></button>
 <button type="button" data-bs-target="#minecraftExamples" data-bs-slide-to="3" aria-label="Slide 4"></button>
 ::::
-:::: carousel-inner
+:::: {class="carousel-inner pb-4"}
 ::::: {class="carousel-item active"}
 <picture>
-  <source srcset="assets/minecraft-1.avif" type="image/avif">
-  <source srcset="assets/minecraft-1.webp" type="image/webp">
-  ![Example of Terralith terrain on our Minecraft Server](assets/minecraft-1.png){class="d-block m-auto w-auto"}
+  <source srcset="assets/2023-2024/minecraft-1.avif" type="image/avif">
+  <source srcset="assets/2023-2024/minecraft-1.webp" type="image/webp">
+  ![Example of Terralith terrain on our Minecraft Server](assets/2023-2024/minecraft-1.png){class="d-block m-auto w-auto"}
 </picture>
 :::::
 ::::: carousel-item
 <picture>
-  <source srcset="assets/minecraft-2.avif" type="image/avif">
-  <source srcset="assets/minecraft-2.webp" type="image/webp">
-  ![Example of player bases on our Minecraft Server](assets/minecraft-2.png){class="d-block m-auto w-auto"}
+  <source srcset="assets/2023-2024/minecraft-2.avif" type="image/avif">
+  <source srcset="assets/2023-2024/minecraft-2.webp" type="image/webp">
+  ![Example of player bases on our Minecraft Server](assets/2023-2024/minecraft-2.png){class="d-block m-auto w-auto"}
 </picture>
 :::::
 ::::: carousel-item
 <picture>
-  <source srcset="assets/minecraft-3.avif" type="image/avif">
-  <source srcset="assets/minecraft-3.webp" type="image/webp">
-  ![Example of development work on our mod for our Minecraft Server](assets/minecraft-3.png){class="d-block m-auto w-auto"}
+  <source srcset="assets/2023-2024/minecraft-3.avif" type="image/avif">
+  <source srcset="assets/2023-2024/minecraft-3.webp" type="image/webp">
+  ![Example of development work on our mod for our Minecraft Server](assets/2023-2024/minecraft-3.png){class="d-block m-auto w-auto"}
 </picture>
 :::::
 ::::: carousel-item
 <picture>
-  <source srcset="assets/minecraft-4.avif" type="image/avif">
-  <source srcset="assets/minecraft-4.webp" type="image/webp">
-  ![Example of modded blocks and player structures on our Minecraft Server](assets/minecraft-4.png){class="d-block m-auto w-auto"}
+  <source srcset="assets/2024-2025/minecraft-highway.avif" type="image/avif">
+  <source srcset="assets/2024-2025/minecraft-highway.webp" type="image/webp">
+  ![Example of modded blocks and player structures on our Minecraft Server](assets/2024-2025/minecraft-highway.png){class="d-block m-auto w-auto"}
 </picture>
 :::::
 ::::

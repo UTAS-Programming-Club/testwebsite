@@ -2,6 +2,7 @@
 SETLOCAL ENABLEDELAYEDEXPANSION
 
 :: TODO: Get timestamp for commit time working, is it even possible on Windows with provided tools?
+:: TODO: Fix image paths to match build.sh
 
 SET "FILEMISSING="
 IF NOT EXIST bin\pandoc.exe SET "FILEMISSING=1"

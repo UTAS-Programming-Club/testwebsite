@@ -3,7 +3,9 @@
 # TODO: Try to remove any html tags from markdown code
 # TODO: Add heading self anchors
 
-if [ ! -f bin/pandoc ] || [ ! -f bin/magick ] || [ ! -f bin/cp ] || [ ! -f bin/date ] || [ ! -f bin/dirname ] || [ ! -f bin/mkdir ] || [ ! -f bin/rm ] || [ ! -f bin/sed ] || [ ! -f bin/xargs ]; then
+if [ ! -f bin/pandoc ] || [ ! -f bin/magick ] || ! command -v cp    >/dev/null || ! command -v date >/dev/null\
+  || ! command -v dirname >/dev/null          || ! command -v mkdir >/dev/null || ! command -v rm   >/dev/null\
+  || ! command -v sed     >/dev/null          || ! command -v xargs >/dev/null ; then
   printf "Required binaries are missing, please run setup.bat to acquire them\n"
   exit 1
 fi
@@ -15,13 +17,13 @@ MAGICK_VERSION=$(bin/magick --version | sed -n 's/^Version: ImageMagick \([[:dig
 
 BUILD_TIME=$(date "+%Y-%m-%dT%T")$(. ./gettimezone.sh)
 #TODO: Make a link if commit has been pushed, `sed -e 's#^git@github.com:#https://github.com/#' -e 's#.git$#/commit/#'` should be useful
-BUILD_COMMIT=$(git$GITEXT show -s --format=%H)
-BUILD_COMMIT_AUTHORS=$(git$GITEXT show -s --format=%an)" "\($(git$GITEXT show -s --format=%ae)\)
-BUILD_COMMIT_COMMITTER=$(git$GITEXT show -s --format=%cn)" "\($(git$GITEXT show -s --format=%ce)\)
-BUILD_COMMIT_TIME=$(git$GITEXT show -s --format=%cI)
+BUILD_COMMIT=$(git"$GITEXT" show -s --format=%H)
+BUILD_COMMIT_AUTHORS=$(git"$GITEXT" show -s --format=%an)" "\($(git"$GITEXT" show -s --format=%ae)\)
+BUILD_COMMIT_COMMITTER=$(git"$GITEXT" show -s --format=%cn)" "\($(git"$GITEXT" show -s --format=%ce)\)
+BUILD_COMMIT_TIME=$(git"$GITEXT" show -s --format=%cI)
 #TODO: Make a link if the branch has a remote
 #TODO: Report if any local changes have occurred since last commit
-BUILD_COMMIT_BRANCH=$(git$GITEXT rev-parse --abbrev-ref HEAD)
+BUILD_COMMIT_BRANCH=$(git"$GITEXT" rev-parse --abbrev-ref HEAD)
 
 if [ "$BUILD_COMMIT_AUTHORS" != "$BUILD_COMMIT_COMMITTER" ]; then
   BUILD_COMMIT_AUTHORS="$BUILD_COMMIT_AUTHORS, $BUILD_COMMIT_COMMITTER"
@@ -71,14 +73,12 @@ for output_page in $PAGES; do
   bin/pandoc templates/setup.yaml -s --template templates/template.html -f markdown-implicit_figures\
              --wrap=preserve -B templates/header.html -A templates/footer.html "pages/$output_page.md"\
              -o "output/$output_page.html"
-  # TODO: Figure out how to make sed accept this input directly
-  printf "s\'%%NAVBAR_ITEMS%%\'%s\'" "$navbar" >> sed.txt
-  sed -i.tmp -f sed.txt -e 's# />#>#' -e "s/%PANDOC_VERSION%/$PANDOC_VERSION/"\
+  sed -i.tmp -e "s\`%NAVBAR_ITEMS%\`$navbar\`" -e 's# />#>#' -e "s/%PANDOC_VERSION%/$PANDOC_VERSION/"\
              -e "s/%MAGICK_VERSION%/$MAGICK_VERSION/" -e "s/%BUILD_TIME%/$BUILD_TIME/"\
              -e "s/%BUILD_COMMIT%/$BUILD_COMMIT/" -e "s/%BUILD_COMMIT_AUTHOR%/$BUILD_COMMIT_AUTHORS/"\
              -e "s/%BUILD_COMMIT_TIME%/$BUILD_COMMIT_TIME/" -e "s/%BUILD_COMMIT_BRANCH%/$BUILD_COMMIT_BRANCH/"\
+             -e 's#^<h\([123456]\)\(.*\)id="\([^"]*\)"\(.*\)</h\1>#<h\1\2id="\3"><span\4</span><a class="ms-2" href="\#\3"><svg class="heading-anchor-icon"><title>Link icon</title></svg></a></h\1>#'\
              "output/$output_page.html"
-  rm sed.txt
   rm "output/$output_page.html.tmp"
 done
 

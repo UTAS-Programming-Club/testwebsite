@@ -4,9 +4,9 @@
 # TODO: Add heading self anchors
 
 # Currently setup.sh only fetches pandoc and magick, should it download cosmo execs like on windows if somehow missing?
-if [ ! -f bin/pandoc ] || [ ! -f bin/magick ] || ! command -v cp    >/dev/null || ! command -v date >/dev/null\
-  || ! command -v dirname >/dev/null          || ! command -v mkdir >/dev/null || ! command -v rm   >/dev/null\
-  || ! command -v sed     >/dev/null          || ! command -v xargs >/dev/null ; then
+if [ ! -f bin/pandoc ] || [ ! -f bin/magick ] || ! command -v cp           >/dev/null || ! command -v date  >/dev/null\
+  || ! command -v dirname >/dev/null          || ! command -v git"$GITEXT" >/dev/null || ! command -v mkdir >/dev/null\
+  || ! command -v rm      >/dev/null          || ! command -v sed          >/dev/null || ! command -v xargs >/dev/null ; then
   if [ "$OS" = Windows_NT ]; then
     SETUPEXT=.bat
   else
@@ -18,7 +18,7 @@ fi
 
 PAGES="index projects events about websiteabout"
 
-PANDOC_VERSION=$(bin/pandoc -v | sed -n 's/^pandoc //p')
+PANDOC_VERSION=$(bin/pandoc -v | sed -n "s/^pandoc //p" | sed "s/$(printf '\r')//")
 MAGICK_VERSION=$(bin/magick --version | sed -n 's/^Version: ImageMagick \([[:digit:]]\{1,\}\.[[:digit:]]\{1,\}\.[[:digit:]]\{1,\}-[[:digit:]]\{1,\}\).*/\1/p')
 
 BUILD_TIME=$(date "+%Y-%m-%dT%T")$(. ./gettimezone.sh)
@@ -76,9 +76,9 @@ for output_page in $PAGES; do
   navbar="$navbar              "
 
   printf "Processing %s\n" "pages/$output_page.md"
-  bin/pandoc templates/setup.yaml -s --template templates/template.html -f markdown-implicit_figures\
-             --wrap=preserve -B templates/header.html -A templates/footer.html "pages/$output_page.md"\
-             -o "output/$output_page.html"
+  bin/pandoc templates/setup.yaml --eol=lf -s --template templates/template.html\
+             -f markdown-implicit_figures --wrap=preserve -B templates/header.html\
+             -A templates/footer.html "pages/$output_page.md" -o "output/$output_page.html"
   sed -i.tmp -e "s\`%NAVBAR_ITEMS%\`$navbar\`" -e 's# />#>#' -e "s/%PANDOC_VERSION%/$PANDOC_VERSION/"\
              -e "s/%MAGICK_VERSION%/$MAGICK_VERSION/" -e "s/%BUILD_TIME%/$BUILD_TIME/"\
              -e "s/%BUILD_COMMIT%/$BUILD_COMMIT/" -e "s/%BUILD_COMMIT_AUTHOR%/$BUILD_COMMIT_AUTHORS/"\

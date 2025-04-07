@@ -49,6 +49,10 @@ IF NOT EXIST bin\sed (
   CALL curl -l https://cosmo.zip/pub/cosmos/v/4.0.2/bin/sed -o bin\sed
 )
 
+IF NOT EXIST bin\touch (
+  CALL curl -l https://cosmo.zip/pub/cosmos/v/4.0.2/bin/touch -o bin\touch
+)
+
 IF NOT EXIST bin\xargs (
   CALL curl -l https://cosmo.zip/pub/cosmos/v/4.0.2/bin/xargs -o bin\xargs
 )

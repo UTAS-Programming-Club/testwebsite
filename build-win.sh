@@ -3,8 +3,6 @@
 # TODO: Try to remove any html tags from markdown code
 # TODO: Add heading self anchors
 
-PATH="$PWD/bin:$PATH"
-
 if [ ! -f bin/pandoc ] || [ ! -f bin/magick ] || [ ! -f bin/sed ] || [ ! -f bin/cp ] || [ ! -f bin/dirname ] || [ ! -f bin/mkdir ] || [ ! -f bin/rm ] || [ ! -f bin/xargs ]; then
   printf "Required binaries are missing, please run setup.bat to acquire them\n"
   exit 1
@@ -16,13 +14,13 @@ PANDOC_VERSION=$(bin/pandoc -v | sed -n 's/^pandoc //p')
 MAGICK_VERSION=$(bin/magick --version | sed -n 's/^Version: ImageMagick \([[:digit:]]\{1,\}\.[[:digit:]]\{1,\}\.[[:digit:]]\{1,\}-[[:digit:]]\{1,\}\).*/\1/p')
 
 #TODO: Make a link if commit has been pushed, `sed -e 's#^git@github.com:#https://github.com/#' -e 's#.git$#/commit/#'` should be useful
-BUILD_COMMIT=$(git.exe show -s --format=%H)
-BUILD_COMMIT_AUTHORS=$(git.exe show -s --format=%an)" "\($(git.exe show -s --format=%ae)\)
-BUILD_COMMIT_COMMITTER=$(git.exe show -s --format=%cn)" "\($(git.exe show -s --format=%ce)\)
-BUILD_COMMIT_TIME=$(git.exe show -s --format=%cI)
+BUILD_COMMIT=$(git$GITEXT show -s --format=%H)
+BUILD_COMMIT_AUTHORS=$(git$GITEXT show -s --format=%an)" "\($(git$GITEXT show -s --format=%ae)\)
+BUILD_COMMIT_COMMITTER=$(git$GITEXT show -s --format=%cn)" "\($(git$GITEXT show -s --format=%ce)\)
+BUILD_COMMIT_TIME=$(git$GITEXT show -s --format=%cI)
 #TODO: Make a link if the branch has a remote
 #TODO: Report if any local changes have occurred since last commit
-BUILD_COMMIT_BRANCH=$(git.exe rev-parse --abbrev-ref HEAD)
+BUILD_COMMIT_BRANCH=$(git$GITEXT rev-parse --abbrev-ref HEAD)
 
 if [ "$BUILD_COMMIT_AUTHORS" != "$BUILD_COMMIT_COMMITTER" ]; then
   BUILD_COMMIT_AUTHORS="$BUILD_COMMIT_AUTHORS, $BUILD_COMMIT_COMMITTER"
@@ -43,7 +41,7 @@ for output_page in $PAGES; do
     fi
 
     ignore=$(sed -n 's/^no-nav-entry: //p' pages/"$navbar_page".md)
-    if [ "${ignore%?}" = "True" ]; then
+    if [ "${ignore%?}" = True ]; then
       continue
     fi
 
@@ -95,7 +93,7 @@ remove_file_ext() {
 }
 
 process_image() {
-  FILE=$(remove_file_ext $1)
+  FILE=$(remove_file_ext "$1")
   dirname "output/$image" | xargs mkdir -p
 
   if [ -f "output/$FILE.avif" ] && [ -f "output/$FILE.png" ] && [ -f "output/$FILE.webp" ]; then

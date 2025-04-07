@@ -5,4 +5,6 @@ IF NOT EXIST bin\dash.com (
   EXIT 1
 )
 
+SET GITEXT=.exe
+SET PATH=%CD%\bin\;%PATH%
 CALL bin\dash.com -c ". ./build-win.sh"

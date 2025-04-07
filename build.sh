@@ -3,8 +3,16 @@
 # TODO: Try to remove any html tags from markdown code
 # TODO: Add heading self anchors
 
-if [ ! -f bin/pandoc ] || [ ! -f bin/magick ]; then
-  printf "Required binaries are missing, please run setup.sh to acquire them\n"
+# Currently setup.sh only fetches pandoc and magick, should it download cosmo execs like on windows if somehow missing?
+if [ ! -f bin/pandoc ] || [ ! -f bin/magick ] || ! command -v cp    >/dev/null || ! command -v date >/dev/null\
+  || ! command -v dirname >/dev/null          || ! command -v mkdir >/dev/null || ! command -v rm   >/dev/null\
+  || ! command -v sed     >/dev/null          || ! command -v xargs >/dev/null ; then
+  if [ "$OS" = Windows_NT ]; then
+    SETUPEXT=.bat
+  else
+    SETUPEXT=.sh
+  fi
+  printf "Required binaries are missing, please run setup%s to acquire them\n" $SETUPEXT
   exit 1
 fi
 
@@ -13,15 +21,15 @@ PAGES="index projects events about websiteabout"
 PANDOC_VERSION=$(bin/pandoc -v | sed -n 's/^pandoc //p')
 MAGICK_VERSION=$(bin/magick --version | sed -n 's/^Version: ImageMagick \([[:digit:]]\{1,\}\.[[:digit:]]\{1,\}\.[[:digit:]]\{1,\}-[[:digit:]]\{1,\}\).*/\1/p')
 
-BUILD_TIME=$(date "+%Y-%m-%dT%T")$(./gettimezone.sh)
+BUILD_TIME=$(date "+%Y-%m-%dT%T")$(. ./gettimezone.sh)
 #TODO: Make a link if commit has been pushed, `sed -e 's#^git@github.com:#https://github.com/#' -e 's#.git$#/commit/#'` should be useful
-BUILD_COMMIT=$(git show -s --format=%H)
-BUILD_COMMIT_AUTHORS=$(git show -s --format=%an)" "\($(git show -s --format=%ae)\)
-BUILD_COMMIT_COMMITTER=$(git show -s --format=%cn)" "\($(git show -s --format=%ce)\)
-BUILD_COMMIT_TIME=$(git show -s --format=%cI)
+BUILD_COMMIT=$(git"$GITEXT" show -s --format=%H)
+BUILD_COMMIT_AUTHORS=$(git"$GITEXT" show -s --format=%an)" "\($(git"$GITEXT" show -s --format=%ae)\)
+BUILD_COMMIT_COMMITTER=$(git"$GITEXT" show -s --format=%cn)" "\($(git"$GITEXT" show -s --format=%ce)\)
+BUILD_COMMIT_TIME=$(git"$GITEXT" show -s --format=%cI)
 #TODO: Make a link if the branch has a remote
 #TODO: Report if any local changes have occurred since last commit
-BUILD_COMMIT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
+BUILD_COMMIT_BRANCH=$(git"$GITEXT" rev-parse --abbrev-ref HEAD)
 
 if [ "$BUILD_COMMIT_AUTHORS" != "$BUILD_COMMIT_COMMITTER" ]; then
   BUILD_COMMIT_AUTHORS="$BUILD_COMMIT_AUTHORS, $BUILD_COMMIT_COMMITTER"
@@ -84,8 +92,15 @@ cp assets/script.js output/assets/script.js
 cp assets/style.css output/assets/style.css
 cp assets/"Programming Club Constitution.pdf" output/assets/"Programming Club Constitution.pdf"
 
+# From https://stackoverflow.com/a/63869938
+# Replaces ${1%.*} which somehow causes a seg fault with cosmo dash when assigned to a var
+# i.e. echo "${1%.*}" is fine but FILE="${1%.*}" gives SIGSEGV
+remove_file_ext() {
+  printf "%s" "$1" | sed -re 's/(^.*[^/])\.[^./]*$/\1/'
+}
+
 process_image() {
-  FILE="${1%.*}"
+  FILE=$(remove_file_ext "$1")
   dirname "output/$image" | xargs mkdir -p
 
   if [ -f "output/$FILE.avif" ] && [ -f "output/$FILE.png" ] && [ -f "output/$FILE.webp" ]; then

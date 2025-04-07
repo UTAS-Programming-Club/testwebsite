@@ -7,4 +7,4 @@ IF NOT EXIST bin\dash.com (
 
 SET GITEXT=.exe
 SET PATH=%CD%\bin\;%PATH%
-CALL bin\dash.com -c ". ./build-win.sh"
+CALL bin\dash.com -c ". ./build.sh"

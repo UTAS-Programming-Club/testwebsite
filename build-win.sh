@@ -3,7 +3,7 @@
 # TODO: Try to remove any html tags from markdown code
 # TODO: Add heading self anchors
 
-if [ ! -f bin/pandoc ] || [ ! -f bin/magick ] || [ ! -f bin/sed ] || [ ! -f bin/cp ] || [ ! -f bin/dirname ] || [ ! -f bin/mkdir ] || [ ! -f bin/rm ] || [ ! -f bin/xargs ]; then
+if [ ! -f bin/pandoc ] || [ ! -f bin/magick ] || [ ! -f bin/cp ] || [ ! -f bin/date ] || [ ! -f bin/dirname ] || [ ! -f bin/mkdir ] || [ ! -f bin/rm ] || [ ! -f bin/sed ] || [ ! -f bin/xargs ]; then
   printf "Required binaries are missing, please run setup.bat to acquire them\n"
   exit 1
 fi
@@ -13,6 +13,7 @@ PAGES="index projects events about websiteabout"
 PANDOC_VERSION=$(bin/pandoc -v | sed -n 's/^pandoc //p')
 MAGICK_VERSION=$(bin/magick --version | sed -n 's/^Version: ImageMagick \([[:digit:]]\{1,\}\.[[:digit:]]\{1,\}\.[[:digit:]]\{1,\}-[[:digit:]]\{1,\}\).*/\1/p')
 
+BUILD_TIME=$(date "+%Y-%m-%dT%T")$(. ./gettimezone.sh)
 #TODO: Make a link if commit has been pushed, `sed -e 's#^git@github.com:#https://github.com/#' -e 's#.git$#/commit/#'` should be useful
 BUILD_COMMIT=$(git$GITEXT show -s --format=%H)
 BUILD_COMMIT_AUTHORS=$(git$GITEXT show -s --format=%an)" "\($(git$GITEXT show -s --format=%ae)\)
@@ -41,7 +42,7 @@ for output_page in $PAGES; do
     fi
 
     ignore=$(sed -n 's/^no-nav-entry: //p' pages/"$navbar_page".md)
-    if [ "${ignore%?}" = True ]; then
+    if [ "$ignore" = True ]; then
       continue
     fi
 
@@ -73,7 +74,7 @@ for output_page in $PAGES; do
   # TODO: Figure out how to make sed accept this input directly
   printf "s\'%%NAVBAR_ITEMS%%\'%s\'" "$navbar" >> sed.txt
   sed -i.tmp -f sed.txt -e 's# />#>#' -e "s/%PANDOC_VERSION%/$PANDOC_VERSION/"\
-             -e "s/%MAGICK_VERSION%/$MAGICK_VERSION/"\
+             -e "s/%MAGICK_VERSION%/$MAGICK_VERSION/" -e "s/%BUILD_TIME%/$BUILD_TIME/"\
              -e "s/%BUILD_COMMIT%/$BUILD_COMMIT/" -e "s/%BUILD_COMMIT_AUTHOR%/$BUILD_COMMIT_AUTHORS/"\
              -e "s/%BUILD_COMMIT_TIME%/$BUILD_COMMIT_TIME/" -e "s/%BUILD_COMMIT_BRANCH%/$BUILD_COMMIT_BRANCH/"\
              "output/$output_page.html"

@@ -21,16 +21,16 @@ IF NOT EXIST bin\magick (
   DEL magick.zip
 )
 
-IF NOT EXIST bin\sed (
-  CALL curl -L https://github.com/mbuilov/sed-windows/releases/download/sed-4.9-x64-fixed/sed-4.9-x64.exe -o bin\sed
-)
-
 IF NOT EXIST bin\dash.com (
   CALL curl -l https://cosmo.zip/pub/cosmos/v/4.0.2/bin/dash -o bin\dash.com
 )
 
 IF NOT EXIST bin\cp (
   CALL curl -l https://cosmo.zip/pub/cosmos/v/4.0.2/bin/cp.ape -o bin\cp
+)
+
+IF NOT EXIST bin\date (
+  CALL curl -l https://cosmo.zip/pub/cosmos/v/4.0.2/bin/date -o bin\date
 )
 
 IF NOT EXIST bin\dirname (
@@ -43,6 +43,10 @@ IF NOT EXIST bin\mkdir (
 
 IF NOT EXIST bin\rm (
   CALL curl -l https://cosmo.zip/pub/cosmos/v/4.0.2/bin/rm.ape -o bin\rm
+)
+
+IF NOT EXIST bin\sed (
+  CALL curl -l https://cosmo.zip/pub/cosmos/v/4.0.2/bin/sed -o bin\sed
 )
 
 IF NOT EXIST bin\xargs (

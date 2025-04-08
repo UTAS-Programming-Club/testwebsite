@@ -14,11 +14,12 @@ IF NOT EXIST bin\pandoc (
 )
 
 IF NOT EXIST bin\magick (
-  CALL curl -L https://imagemagick.org/archive/binaries/ImageMagick-7.1.1-47-portable-Q16-HDRI-x64.zip -o magick.zip
-  CALL tar -xf magick.zip -C bin\ --strip-components=1 ImageMagick-7.1.1-47-portable-Q16-HDRI-x64/magick.exe
-  CALL tar -xf magick.zip -C bin\ --strip-components=1 ImageMagick-7.1.1-47-portable-Q16-HDRI-x64/colors.xml
+  CALL curl -L https://github.com/ImageMagick/ImageMagick/releases/download/7.1.1-47/ImageMagick.Q16-HDRI.msixbundle -o bin\magick.msixbundle
+  CALL tar -xf .\bin\magick.msixbundle -C bin assets.appx main-x64.appx
+  CALL tar -xf .\bin\assets.appx -C bin colors.xml
+  CALL tar -xf .\bin\main-x64.appx -C bin magick.exe
   MOVE bin\magick.exe bin\magick >nul
-  DEL magick.zip
+  DEL bin\magick.msixbundle bin\*.appx
 )
 
 IF NOT EXIST bin\dash.com (

@@ -3,7 +3,6 @@
 # Currently setup.sh only fetches pandoc and magick, should it download cosmo execs like on windows if somehow missing?
 if ! command -v git"$GITEXT" >/dev/null || ! command -v touch >/dev/null ; then
   if [ "$OS" = Windows_NT ]; then
-    SETUPEXT=.bat
     printf "Required binaries are missing, please run setup.bat to acquire them\n"
   fi
   exit 1

@@ -18,7 +18,7 @@ fi
 
 PAGES="index projects events about websiteabout"
 
-PANDOC_VERSION=$(bin/pandoc -v | sed -n "s/^pandoc //p" | sed "s/$(printf '\r')//")
+PANDOC_VERSION=$(bin/pandoc -v | sed -n 's/^pandoc //p' | sed "s/$(printf '\r')//")
 MAGICK_VERSION=$(bin/magick --version | sed -n 's/^Version: ImageMagick \([[:digit:]]\{1,\}\.[[:digit:]]\{1,\}\.[[:digit:]]\{1,\}-[[:digit:]]\{1,\}\).*/\1/p')
 
 BUILD_TIME=$(date "+%Y-%m-%dT%T")$(. ./gettimezone.sh)

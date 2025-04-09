@@ -22,7 +22,6 @@ PANDOC_VERSION=$(bin/pandoc -v | sed -n 's/^pandoc //p' | sed "s/$(printf '\r')/
 MAGICK_VERSION=$(bin/magick --version | sed -n 's/^Version: ImageMagick \([[:digit:]]\{1,\}\.[[:digit:]]\{1,\}\.[[:digit:]]\{1,\}-[[:digit:]]\{1,\}\).*/\1/p')
 
 BUILD_TIME=$(date "+%Y-%m-%dT%T")$(. ./gettimezone.sh)
-#TODO: Make a link if commit has been pushed, `sed -e 's#^git@github.com:#https://github.com/#' -e 's#.git$#/commit/#'` should be useful
 BUILD_COMMIT=$(git"$GITEXT" show -s --format=%H)
 BUILD_COMMIT_AUTHORS=$(git"$GITEXT" show -s --format=%an)" "\($(git"$GITEXT" show -s --format=%ae)\)
 BUILD_COMMIT_COMMITTER=$(git"$GITEXT" show -s --format=%cn)" "\($(git"$GITEXT" show -s --format=%ce)\)
@@ -81,8 +80,8 @@ for output_page in $PAGES; do
              -A templates/footer.html "pages/$output_page.md" -o "output/$output_page.html"
   sed -i.tmp -e "s\`%NAVBAR_ITEMS%\`$navbar\`" -e 's# />#>#' -e "s/%PANDOC_VERSION%/$PANDOC_VERSION/"\
              -e "s/%MAGICK_VERSION%/$MAGICK_VERSION/" -e "s/%BUILD_TIME%/$BUILD_TIME/"\
-             -e "s/%BUILD_COMMIT%/$BUILD_COMMIT/" -e "s/%BUILD_COMMIT_AUTHOR%/$BUILD_COMMIT_AUTHORS/"\
-             -e "s/%BUILD_COMMIT_TIME%/$BUILD_COMMIT_TIME/" -e "s/%BUILD_COMMIT_BRANCH%/$BUILD_COMMIT_BRANCH/"\
+             -e "s/%BUILD_COMMIT%/$BUILD_COMMIT/g" -e "s/%BUILD_COMMIT_AUTHOR%/$BUILD_COMMIT_AUTHORS/"\
+             -e "s/%BUILD_COMMIT_TIME%/$BUILD_COMMIT_TIME/" -e "s/%BUILD_COMMIT_BRANCH%/$BUILD_COMMIT_BRANCH/g"\
              -e 's#^<h\([123456]\)\(.*\)id="\([^"]*\)"\(.*\)</h\1>#<h\1\2id="\3"><span\4</span><a class="ms-2" href="\#\3"><svg class="heading-anchor-icon"><title>Link icon</title></svg></a></h\1>#'\
              "output/$output_page.html"
   rm "output/$output_page.html.tmp"

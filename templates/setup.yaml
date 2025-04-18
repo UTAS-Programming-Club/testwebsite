@@ -11,7 +11,7 @@ robots-meta: noindex
 # TODO: Allow setting url and image per page, also add og:site_name
 url-og: programmingclub.com.au/testwebsite/
 # TODO: Add structured properties for og:image
-image-og: https://programmingclub.com.au/assets/photos/first_in_person.jpg
+image-og: https://programmingclub.com.au/assets/photos/first_meetup.png
 locale-og: en_AU
 
 card-twitter: summary_large_image

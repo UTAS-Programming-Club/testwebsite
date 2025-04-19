@@ -1,0 +1,1 @@
+This was where we developed our new website before it was ready to launch, that time has passed so now it is available at https://programmingclub.com.au/ with updated source at https://github.com/UTAS-Programming-Club/UTAS-Programming-Club.github.io.
